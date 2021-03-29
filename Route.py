@@ -1,7 +1,9 @@
 # Definition of RouteTree class
 import sys
 class Route:
-    routeNames = ["Stop", "Quick Out", "Slant", "Deep Out", "Deep In", "10 Out", "10 In", "Corner", "Post", "Go", "5 In", "5 Out"]
+    routeNames = ["Stop", "Quick Out", "Slant", "Comeback Out",
+                "Comeback In", "10 Out", "10 In", "Corner",
+                "Post", "Go", "5 In", "5 Out", "Pivot", "Post-Corner"]
 
     def __init__(self, r=0):
         self.route = r
