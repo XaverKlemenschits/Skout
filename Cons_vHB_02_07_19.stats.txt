@@ -1,0 +1,199 @@
+Reading from: ['Cons_vHB_02_07_19.json']
+Play 0:
+Routes: [5 Out, Corner, Quick Out, Slant]
+Downcount: [0, 0, 0, 0, 1]
+Formations: 
+Strongsides: [1, 0]
+
+Play 1:
+Routes: [5 Out, Stop, 5 Out, Go]
+Downcount: [0, 1, 0, 0, 0]
+Formations: tight
+Strongsides: [0, 1]
+
+Play 2:
+Routes: [5 Out, Stop, 5 Out, Slant]
+Downcount: [1, 0, 0, 0, 0]
+Formations: Tight
+Strongsides: [0, 1]
+
+Play 3:
+Routes: [5 In, Corner, Corner, Pivot]
+Downcount: [0, 0, 0, 0, 1]
+Formations: 
+Strongsides: [1, 0]
+
+Play 4:
+Routes: [5 In, Corner, Corner, 5 Out]
+Downcount: [0, 0, 1, 0, 0]
+Formations: tight
+Strongsides: [1, 0]
+
+Play 5:
+Routes: [5 In, Slant, Corner, Quick In]
+Downcount: [0, 0, 1, 0, 0]
+Formations: tight
+Strongsides: [1, 0]
+
+Play 6:
+Routes: [5 In, Slant, Quick Out, Go]
+Downcount: [0, 1, 0, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 7:
+Routes: [5 In, Quick Out, Post, Stop]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 8:
+Routes: [5 In, Stop, Quick Out, Quick Out]
+Downcount: [0, 1, 0, 0, 0]
+Formations: Bunch
+Strongsides: [1, 0]
+
+Play 9:
+Routes: [Go, 5 Out, 5 Out, Slant]
+Downcount: [0, 1, 0, 0, 0]
+Formations: B motion right
+Strongsides: [1, 0]
+
+Play 10:
+Routes: [Go, 5 Out, 5 In, 5 In]
+Downcount: [0, 1, 0, 0, 0]
+Formations: 
+Strongsides: [1, 0]
+
+Play 11:
+Routes: [Go, 5 In, Quick Out, Slant]
+Downcount: [0, 0, 1, 0, 0]
+Formations: trips b tight
+Strongsides: [1, 0]
+
+Play 12:
+Routes: [Go, Quick Out, 10 Out, Slant]
+Downcount: [0, 0, 1, 0, 0]
+Formations: 
+Strongsides: [1, 0]
+
+Play 13:
+Routes: [Go, Stop, Stop, Corner]
+Downcount: [0, 1, 0, 0, 0]
+Formations: D motion trips
+Strongsides: [1, 0]
+
+Play 14:
+Routes: [Post, 5 Out, Post, Slant]
+Downcount: [0, 0, 1, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 15:
+Routes: [Post, 5 Out, 10 Out, Reverse]
+Downcount: [0, 1, 0, 0, 0]
+Formations: tight
+Strongsides: [0, 1]
+
+Play 16:
+Routes: [Post, 5 Out, Stop, 5 Out]
+Downcount: [1, 0, 0, 0, 0]
+Formations: D tight
+Strongsides: [1, 0]
+
+Play 17:
+Routes: [Post, Comeback In, 10 Out, 10 In]
+Downcount: [0, 0, 1, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 18:
+Routes: [Post, Quick Out, 5 Out, Stop]
+Downcount: [1, 0, 0, 0, 0]
+Formations: tight
+Strongsides: [1, 0]
+
+Play 19:
+Routes: [Post, Quick Out, Slant, Pivot]
+Downcount: [0, 0, 0, 0, 1]
+Formations: 
+Strongsides: [0, 1]
+
+Play 20:
+Routes: [Post, Stop, Post, 5 In]
+Downcount: [0, 0, 0, 0, 1]
+Formations: tight
+Strongsides: [0, 1]
+
+Play 21:
+Routes: [10 In, 5 Out, Post, Comeback Out]
+Downcount: [0, 0, 0, 1, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 22:
+Routes: [Comeback Out, 5 In, 5 In, Stop]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [1, 0]
+
+Play 23:
+Routes: [Comeback Out, Post, Quick Out, Comeback In]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [1, 0]
+
+Play 24:
+Routes: [Slant, Corner, 5 In, 5 In]
+Downcount: [0, 1, 0, 0, 0]
+Formations: tight
+Strongsides: [1, 0]
+
+Play 25:
+Routes: [Slant, Corner, Slant, Post]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 26:
+Routes: [Slant, Slant, Post, Go]
+Downcount: [0, 0, 1, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 27:
+Routes: [Slant, Quick Out, Quick Out, Quick Out]
+Downcount: [0, 0, 0, 0, 1]
+Formations: 
+Strongsides: [0, 1]
+
+Play 28:
+Routes: [Stop, Post, Quick Out, 5 In]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 29:
+Routes: [Stop, Slant, Quick Out, Stop]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [1, 0]
+
+Play 30:
+Routes: [Stop, Stop, Go, Stop]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [1, 0]
+
+Play 31:
+Routes: [Stop, Stop, Stop, Post]
+Downcount: [1, 0, 0, 0, 0]
+Formations: 
+Strongsides: [0, 1]
+
+Play 32:
+Routes: [Stop, Stop, Stop, Stop]
+Downcount: [1, 0, 0, 0, 0]
+Formations: B motion right
+Strongsides: [1, 0]
+

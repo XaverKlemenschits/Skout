@@ -1,9 +1,23 @@
 # Definition of RouteTree class
 import sys
 class Route:
-    routeNames = ["Stop", "Quick Out", "Slant", "Comeback Out",
-                "Comeback In", "10 Out", "10 In", "Corner",
-                "Post", "Go", "5 In", "5 Out", "Pivot", "Post-Corner"]
+    routeNames = ["Stop",           # 0
+                  "Quick Out",      # 1
+                  "Slant",          # 2
+                  "Comeback Out",   # 3
+                  "Comeback In",    # 4
+                  "10 Out",         # 5
+                  "10 In",          # 6
+                  "Corner",         # 7
+                  "Post",           # 8
+                  "Go",             # 9
+                  "5 In",           # 10
+                  "5 Out",          # 11
+                  "Pivot",          # 12
+                  "Post-Corner",    # 13
+                  "Reverse",        # 14
+                  "Quick In"        # 15
+                  ]
 
     def __init__(self, r=0):
         self.route = r
@@ -28,6 +42,9 @@ class Route:
                 self.route = r
 
     def getRoute(self):
+        return self.routeNames[self.route]
+
+    def __str__(self):
         return self.routeNames[self.route]
 
 class RouteList:
@@ -62,8 +79,8 @@ class RouteList:
     def __str__(self):
         outputStr = "["
         for i in range(len(self.routes)-1):
-            outputStr = outputStr + str(self.routes[i].route) + ", "
-        outputStr = outputStr + str(self.routes[self.numberOfRoutes-1].route) +  "]"
+            outputStr = outputStr + str(self.routes[i]) + ", "
+        outputStr = outputStr + str(self.routes[self.numberOfRoutes-1]) +  "]"
         return outputStr
 
     def __getitem__(self, i):
