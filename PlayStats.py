@@ -78,5 +78,5 @@ class PlayStats:
             outputStr += "Routes: " + str(self.routesList[i]) + "\n"
             outputStr += "Downcount: " + str(self.downStats[i]) + "\n"
             outputStr += "Formations: " + str(self.formations[i]) + "\n"
-            outputStr += "Stringsides: " + str(self.strongSides[i]) + "\n"
+            outputStr += "Strongsides: " + str(self.strongSides[i]) + "\n"
             print(outputStr)
