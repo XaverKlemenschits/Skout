@@ -10,10 +10,16 @@ class PlayList:
         self.downs = []
         self.sides = []
 
+    def setTeamNames(self, home, away):
+        self.homeTeam = home
+        self.awayTeam = away
+
+    def setDate(self, date):
+        self.date = date
+
     def addPlays(self, dict):
         
         for play in dict:
-            # TODO add logic here for duplicate counting
             routes = []
             for i in range(4):
                 routes.append(Route(play['routes'][i]))

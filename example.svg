@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="2480" height="3508" viewBox="0 -3508 2480 3508">
+<defs>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d0">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="black" />
+</marker>
+</defs>
+<rect x="0" y="-3508" width="2480" height="3508" fill="#ffffff">
+<title>Background</title>
+</rect>
+<text x="1240.0" y="-3212.0" font-size="100" fill="black" text-anchor="middle" dy="0.5em">Skout Report</text>
+<text x="620.0" y="-3092.0" font-size="60" fill="black"><tspan x="620.0" dy="0em">Home: Studs</tspan><tspan x="620.0" dy="1em">Away: </tspan></text>
+<text x="1440.0" y="-3092.0" font-size="60" fill="black"><tspan x="1440.0" dy="0em">Date: 22.09.2018</tspan><tspan x="1440.0" dy="1em">Score: 0 - 0</tspan></text>
+<path d="M237.0,-2972.0 L905.6666666666666,-2972.0 L905.6666666666666,-2436.8 L237.0,-2436.8 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-2615.2000000000003 L905.6666666666666,-2615.2000000000003" stroke-width="2" stroke="black" />
+<path d="M237.0,-2436.8 L905.6666666666666,-2436.8 L905.6666666666666,-1901.6 L237.0,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-2080.0 L905.6666666666666,-2080.0" stroke-width="2" stroke="black" />
+<path d="M237.0,-1901.6 L905.6666666666666,-1901.6 L905.6666666666666,-1366.3999999999999 L237.0,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-1544.8 L905.6666666666666,-1544.8" stroke-width="2" stroke="black" />
+<path d="M237.0,-1366.3999999999999 L905.6666666666666,-1366.3999999999999 L905.6666666666666,-831.1999999999998 L237.0,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-1009.5999999999999 L905.6666666666666,-1009.5999999999999" stroke-width="2" stroke="black" />
+<path d="M237.0,-831.1999999999998 L905.6666666666666,-831.1999999999998 L905.6666666666666,-296.0 L237.0,-296.0 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-474.3999999999999 L905.6666666666666,-474.3999999999999" stroke-width="2" stroke="black" />
+<path d="M905.6666666666666,-2972.0 L1574.3333333333333,-2972.0 L1574.3333333333333,-2436.8 L905.6666666666666,-2436.8 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-2615.2000000000003 L1574.3333333333333,-2615.2000000000003" stroke-width="2" stroke="black" />
+<path d="M905.6666666666666,-2436.8 L1574.3333333333333,-2436.8 L1574.3333333333333,-1901.6 L905.6666666666666,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-2080.0 L1574.3333333333333,-2080.0" stroke-width="2" stroke="black" />
+<path d="M905.6666666666666,-1901.6 L1574.3333333333333,-1901.6 L1574.3333333333333,-1366.3999999999999 L905.6666666666666,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-1544.8 L1574.3333333333333,-1544.8" stroke-width="2" stroke="black" />
+<path d="M905.6666666666666,-1366.3999999999999 L1574.3333333333333,-1366.3999999999999 L1574.3333333333333,-831.1999999999998 L905.6666666666666,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-1009.5999999999999 L1574.3333333333333,-1009.5999999999999" stroke-width="2" stroke="black" />
+<path d="M905.6666666666666,-831.1999999999998 L1574.3333333333333,-831.1999999999998 L1574.3333333333333,-296.0 L905.6666666666666,-296.0 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-474.3999999999999 L1574.3333333333333,-474.3999999999999" stroke-width="2" stroke="black" />
+<path d="M1574.3333333333333,-2972.0 L2243.0,-2972.0 L2243.0,-2436.8 L1574.3333333333333,-2436.8 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M1574.3333333333333,-2615.2000000000003 L2243.0,-2615.2000000000003" stroke-width="2" stroke="black" />
+<path d="M1574.3333333333333,-2436.8 L2243.0,-2436.8 L2243.0,-1901.6 L1574.3333333333333,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M1574.3333333333333,-2080.0 L2243.0,-2080.0" stroke-width="2" stroke="black" />
+<path d="M1574.3333333333333,-1901.6 L2243.0,-1901.6 L2243.0,-1366.3999999999999 L1574.3333333333333,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M1574.3333333333333,-1544.8 L2243.0,-1544.8" stroke-width="2" stroke="black" />
+<path d="M1574.3333333333333,-1366.3999999999999 L2243.0,-1366.3999999999999 L2243.0,-831.1999999999998 L1574.3333333333333,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M1574.3333333333333,-1009.5999999999999 L2243.0,-1009.5999999999999" stroke-width="2" stroke="black" />
+<path d="M1574.3333333333333,-831.1999999999998 L2243.0,-831.1999999999998 L2243.0,-296.0 L1574.3333333333333,-296.0 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M1574.3333333333333,-474.3999999999999 L2243.0,-474.3999999999999" stroke-width="2" stroke="black" />
+<path d="M1000,-400 L1000,-800" stroke="red" stroke-width="10" fill="none" marker-end="url(#d0)" />
+<path d="M30,-20 L700,-500 L1200,-500" stroke="red" stroke-width="2" fill="none" marker-end="url(#d0)" />
+</svg>

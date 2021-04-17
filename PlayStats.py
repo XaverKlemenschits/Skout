@@ -20,6 +20,10 @@ class PlayStats:
         self.swapEntry(i, j, self.strongSides)
 
     def __init__(self, playList):
+        self.homeTeam = playList.homeTeam
+        self.awayTeam = playList.awayTeam
+        self.date = playList.date
+        self.score = (0,0)
         playList.sort()
         self.routesList = []
         self.occurences = []

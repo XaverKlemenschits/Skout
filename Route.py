@@ -18,6 +18,13 @@ class Route:
                   "Reverse",        # 14
                   "Quick In"        # 15
                   ]
+    
+    routeCoords = [[[0, 6]],
+                   [[5, 1]],
+                   [[-5, 3]],
+                   [[0, 12], [1, 10]]
+                    ]
+
 
     def __init__(self, r=0):
         self.route = r
@@ -52,7 +59,7 @@ class RouteList:
 
     def __init__(self, routes=[]):
         if(len(routes) != self.numberOfRoutes):
-            print("Warning: RouteList must have exactly 4 routes!")
+            print("Warning: RouteList must have exactly {} routes!".format(self.numberOfRoutes))
 
         if(type(routes[0]) != Route):
             self.routes = []
