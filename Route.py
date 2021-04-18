@@ -18,11 +18,23 @@ class Route:
                   "Reverse",        # 14
                   "Quick In"        # 15
                   ]
-    
-    routeCoords = [[[0, 6]],
-                   [[5, 1]],
-                   [[-5, 3]],
-                   [[0, 12], [1, 10]]
+    # coordinates for the lines describing the routes
+    routeCoords = [[[0, 6], [-1, 5]],
+                   [[4, 1]],
+                   [[-4, 3]],
+                   [[0, 12], [1, 10]],
+                   [[0, 12], [-1, 10]],
+                   [[0, 10], [2, 10]],
+                   [[0, 10], [-2, 10]],
+                   [[0, 8], [3, 12]],
+                   [[0, 8], [-3, 12]],
+                   [[0, 12]],
+                   [[0, 5], [-2, 5]],
+                   [[0, 5], [2, 5]],
+                   [[-3, 3], [3, 3]],
+                   [[0, 7], [-2, 9], [1, 12]],
+                   [[-1, -1], [-1, 5]],
+                   [[-4, 1]]
                     ]
 
 
@@ -50,6 +62,9 @@ class Route:
 
     def getRoute(self):
         return self.routeNames[self.route]
+
+    def getRoutePath(self):
+        return self.routeCoords[self.route]
 
     def __str__(self):
         return self.routeNames[self.route]

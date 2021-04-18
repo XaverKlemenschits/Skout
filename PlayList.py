@@ -17,6 +17,10 @@ class PlayList:
     def setDate(self, date):
         self.date = date
 
+    def setScore(self, home, away):
+        self.homeScore = home
+        self.awayScore = away
+
     def addPlays(self, dict):
         
         for play in dict:

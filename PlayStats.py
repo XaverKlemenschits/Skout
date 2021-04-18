@@ -23,7 +23,7 @@ class PlayStats:
         self.homeTeam = playList.homeTeam
         self.awayTeam = playList.awayTeam
         self.date = playList.date
-        self.score = (0,0)
+        self.score = (playList.homeScore, playList.awayScore)
         playList.sort()
         self.routesList = []
         self.occurences = []
@@ -39,7 +39,8 @@ class PlayStats:
         downList = [0,0,0,0,0]
         downList[playList.downs[0]-1] = 1
         self.downStats.append(downList)
-        self.formations.append(playList.formations[0])
+        self.formations.append([])
+        self.formations[-1].append(playList.formations[0])
         strongside = [0,0]
         self.incrementStrongSide(strongside, playList.sides[0])
         self.strongSides.append(strongside)
@@ -50,7 +51,7 @@ class PlayStats:
             if(self.routesList[last] == playList.routes[i]):
                 self.occurences[last] += 1
                 self.downStats[last][playList.downs[i]-1] += 1
-                self.formations[last] += ", " + playList.formations[i]
+                self.formations[last].append(playList.formations[i])
                 self.incrementStrongSide(self.strongSides[last], playList.sides[i])
 
             # routes are not equal, add new play to list
@@ -60,7 +61,8 @@ class PlayStats:
                 downList = [0,0,0,0,0]
                 downList[playList.downs[i]-1] = 1
                 self.downStats.append(downList)
-                self.formations.append(playList.formations[i])
+                self.formations.append([])
+                self.formations[-1].append(playList.formations[i])
                 strongside = [0,0]
                 self.incrementStrongSide(strongside, playList.sides[i])
                 self.strongSides.append(strongside)
@@ -84,3 +86,15 @@ class PlayStats:
             outputStr += "Formations: " + str(self.formations[i]) + "\n"
             outputStr += "Strongsides: " + str(self.strongSides[i]) + "\n"
             print(outputStr)
+
+    def getFormations(self, index):
+        if(len(self.formations[index]) == 0):
+            return ""
+        result = str(self.formations[index][0])
+        for i in range(1, len(self.formations[index])):
+            if(self.formations[index][i] != ""):
+                if(result != ""):
+                    result = result + ", "
+                result = result + self.formations[index][i]
+
+        return result

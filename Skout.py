@@ -24,18 +24,17 @@ def main():
 
       listOfPlays = np.array(data['plays'])
 
-      playList.setTeamNames(data['team'], "")
-      playList.setDate(data['date'])
+      playList.setTeamNames(data['team'], data.get('opponent', "nA")) # need a field "team" !
+      playList.setDate(data.get('date', "nA"))
+      score = data.get('score', ["nA", "nA"])
+      playList.setScore(score[0], score[1])
       playList.addPlays(listOfPlays)
-
-      # teamName = data['team']
-      # date = data['date']
 
   stats = PlayStats(playList)
   # stats.print()
 
   page = SkoutPage(stats)
-  page.draw()
+  page.makeSvg()
 
 
   

@@ -3,75 +3,715 @@
      width="2480" height="3508" viewBox="0 -3508 2480 3508">
 <defs>
 <marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d0">
-<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="black" />
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d1">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d2">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d3">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d4">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d5">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d6">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d7">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d8">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d9">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d10">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d11">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d12">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d13">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d14">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d15">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d16">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d17">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d18">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d19">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d20">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d21">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d22">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d23">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d24">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d25">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d26">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d27">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d28">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d29">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d30">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d31">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d32">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d33">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d34">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d35">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d36">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d37">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d38">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d39">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d40">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d41">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d42">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d43">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d44">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d45">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d46">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d47">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d48">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d49">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d50">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d51">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d52">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d53">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d54">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d55">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d56">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="red" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d57">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="green" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d58">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orange" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.0" viewBox="-0.1 -0.5 1.0 1.0" orient="auto" id="d59">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="blue" />
 </marker>
 </defs>
 <rect x="0" y="-3508" width="2480" height="3508" fill="#ffffff">
 <title>Background</title>
 </rect>
 <text x="1240.0" y="-3212.0" font-size="100" fill="black" text-anchor="middle" dy="0.5em">Skout Report</text>
-<text x="620.0" y="-3092.0" font-size="60" fill="black"><tspan x="620.0" dy="0em">Home: Studs</tspan><tspan x="620.0" dy="1em">Away: </tspan></text>
-<text x="1440.0" y="-3092.0" font-size="60" fill="black"><tspan x="1440.0" dy="0em">Date: 22.09.2018</tspan><tspan x="1440.0" dy="1em">Score: 0 - 0</tspan></text>
+<text x="620.0" y="-3092.0" font-size="60" fill="black"><tspan x="620.0" dy="0em">Home: Studs</tspan><tspan x="620.0" dy="1em">Away: Vipers</tspan></text>
+<text x="1440.0" y="-3092.0" font-size="60" fill="black"><tspan x="1440.0" dy="0em">Date: 22.09.2018</tspan><tspan x="1440.0" dy="1em">Score: nA - nA</tspan></text>
 <path d="M237.0,-2972.0 L905.6666666666666,-2972.0 L905.6666666666666,-2436.8 L237.0,-2436.8 Z" stroke="black" stroke-width="4" fill="none">
 <title>PlayBorder</title>
 </path>
 <path d="M237.0,-2615.2000000000003 L905.6666666666666,-2615.2000000000003" stroke-width="2" stroke="black" />
-<path d="M237.0,-2436.8 L905.6666666666666,-2436.8 L905.6666666666666,-1901.6 L237.0,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M237.0,-2080.0 L905.6666666666666,-2080.0" stroke-width="2" stroke="black" />
-<path d="M237.0,-1901.6 L905.6666666666666,-1901.6 L905.6666666666666,-1366.3999999999999 L237.0,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M237.0,-1544.8 L905.6666666666666,-1544.8" stroke-width="2" stroke="black" />
-<path d="M237.0,-1366.3999999999999 L905.6666666666666,-1366.3999999999999 L905.6666666666666,-831.1999999999998 L237.0,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M237.0,-1009.5999999999999 L905.6666666666666,-1009.5999999999999" stroke-width="2" stroke="black" />
-<path d="M237.0,-831.1999999999998 L905.6666666666666,-831.1999999999998 L905.6666666666666,-296.0 L237.0,-296.0 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M237.0,-474.3999999999999 L905.6666666666666,-474.3999999999999" stroke-width="2" stroke="black" />
+<text x="247.0" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="327.0" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">3</text>
+<text x="247.0" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="327.0" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">1</text>
+<text x="247.0" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="327.0" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">2</text>
+<text x="247.0" y="-2515.2000000000003" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="327.0" y="-2515.2000000000003" font-size="30" fill="black" dy="1em">1</text>
+<text x="247.0" y="-2485.2000000000003" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="327.0" y="-2485.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="407.0" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="587.0" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">7</text>
+<text x="407.0" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="587.0" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">7</text>
+<text x="407.0" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="587.0" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-2625.2000000000003" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="407.0" y="-2625.2000000000003" font-size="30" fill="black" dy="0em">B motion to left</text>
+<path d="M297.0,-2685.2000000000003 L845.6666666666666,-2685.2000000000003" stroke-width="3" stroke="black" />
+<path d="M297.0,-2788.0000000000005 L845.6666666666666,-2788.0000000000005" stroke-width="2" stroke="gray" />
+<path d="M297.0,-2890.8 L845.6666666666666,-2890.8" stroke-width="2" stroke="gray" />
+<text x="845.6666666666666" y="-2788.0000000000005" font-size="30" dy="0.4em">5</text>
+<text x="845.6666666666666" y="-2890.8" font-size="30" dy="0.4em">10</text>
+<path d="M379.24,-2685.2000000000003 L379.24,-2808.5600000000004 L399.8,-2788.0000000000005" stroke="red" stroke-width="10" fill="none" marker-end="url(#d0)" />
+<path d="M571.3333333333333,-2685.2000000000003 L571.3333333333333,-2808.5600000000004 L550.7733333333332,-2788.0000000000005" stroke="green" stroke-width="10" fill="none" marker-end="url(#d1)" />
+<path d="M667.3799999999999,-2685.2000000000003 L667.3799999999999,-2808.5600000000004 L646.8199999999998,-2788.0000000000005" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d2)" />
+<path d="M763.4266666666666,-2685.2000000000003 L763.4266666666666,-2808.5600000000004 L742.8666666666666,-2788.0000000000005" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d3)" />
+<path d="M571.3333333333333,-2702.520508075689 L551.3333333333333,-2670.2000000000003 L591.3333333333333,-2670.2000000000003 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="379.24" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="763.4266666666666" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="667.3799999999999" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
 <path d="M905.6666666666666,-2972.0 L1574.3333333333333,-2972.0 L1574.3333333333333,-2436.8 L905.6666666666666,-2436.8 Z" stroke="black" stroke-width="4" fill="none">
 <title>PlayBorder</title>
 </path>
 <path d="M905.6666666666666,-2615.2000000000003 L1574.3333333333333,-2615.2000000000003" stroke-width="2" stroke="black" />
-<path d="M905.6666666666666,-2436.8 L1574.3333333333333,-2436.8 L1574.3333333333333,-1901.6 L905.6666666666666,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M905.6666666666666,-2080.0 L1574.3333333333333,-2080.0" stroke-width="2" stroke="black" />
-<path d="M905.6666666666666,-1901.6 L1574.3333333333333,-1901.6 L1574.3333333333333,-1366.3999999999999 L905.6666666666666,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M905.6666666666666,-1544.8 L1574.3333333333333,-1544.8" stroke-width="2" stroke="black" />
-<path d="M905.6666666666666,-1366.3999999999999 L1574.3333333333333,-1366.3999999999999 L1574.3333333333333,-831.1999999999998 L905.6666666666666,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M905.6666666666666,-1009.5999999999999 L1574.3333333333333,-1009.5999999999999" stroke-width="2" stroke="black" />
-<path d="M905.6666666666666,-831.1999999999998 L1574.3333333333333,-831.1999999999998 L1574.3333333333333,-296.0 L905.6666666666666,-296.0 Z" stroke="black" stroke-width="4" fill="none">
-<title>PlayBorder</title>
-</path>
-<path d="M905.6666666666666,-474.3999999999999 L1574.3333333333333,-474.3999999999999" stroke-width="2" stroke="black" />
+<text x="915.6666666666666" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="995.6666666666666" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">2</text>
+<text x="915.6666666666666" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="995.6666666666666" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="995.6666666666666" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-2515.2000000000003" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="995.6666666666666" y="-2515.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-2485.2000000000003" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="995.6666666666666" y="-2485.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1255.6666666666665" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">3</text>
+<text x="1075.6666666666665" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1255.6666666666665" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">3</text>
+<text x="1075.6666666666665" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1255.6666666666665" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-2625.2000000000003" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1075.6666666666665" y="-2625.2000000000003" font-size="30" fill="black" dy="0em">A tight, A tight, A tight</text>
+<path d="M965.6666666666666,-2685.2000000000003 L1514.3333333333333,-2685.2000000000003" stroke-width="3" stroke="black" />
+<path d="M965.6666666666666,-2788.0000000000005 L1514.3333333333333,-2788.0000000000005" stroke-width="2" stroke="gray" />
+<path d="M965.6666666666666,-2890.8 L1514.3333333333333,-2890.8" stroke-width="2" stroke="gray" />
+<text x="1514.3333333333333" y="-2788.0000000000005" font-size="30" dy="0.4em">5</text>
+<text x="1514.3333333333333" y="-2890.8" font-size="30" dy="0.4em">10</text>
+<path d="M1047.9066666666668,-2685.2000000000003 L1047.9066666666668,-2849.6800000000003 L1109.5866666666668,-2931.9200000000005" stroke="red" stroke-width="10" fill="none" marker-end="url(#d4)" />
+<path d="M1240.0,-2685.2000000000003 L1240.0,-2788.0000000000005 L1281.1200000000001,-2788.0000000000005" stroke="green" stroke-width="10" fill="none" marker-end="url(#d5)" />
+<path d="M1336.0466666666666,-2685.2000000000003 L1418.2866666666666,-2705.76" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d6)" />
+<path d="M1432.0933333333332,-2685.2000000000003 L1432.0933333333332,-2788.0000000000005 L1473.2133333333334,-2788.0000000000005" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d7)" />
+<path d="M1240.0,-2702.520508075689 L1220.0,-2670.2000000000003 L1260.0,-2670.2000000000003 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1047.9066666666668" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="1432.0933333333332" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="1336.0466666666666" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
 <path d="M1574.3333333333333,-2972.0 L2243.0,-2972.0 L2243.0,-2436.8 L1574.3333333333333,-2436.8 Z" stroke="black" stroke-width="4" fill="none">
 <title>PlayBorder</title>
 </path>
 <path d="M1574.3333333333333,-2615.2000000000003 L2243.0,-2615.2000000000003" stroke-width="2" stroke="black" />
+<text x="1584.3333333333333" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="1664.3333333333333" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="1664.3333333333333" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">1</text>
+<text x="1584.3333333333333" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="1664.3333333333333" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">1</text>
+<text x="1584.3333333333333" y="-2515.2000000000003" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="1664.3333333333333" y="-2515.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-2485.2000000000003" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="1664.3333333333333" y="-2485.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="1744.3333333333333" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1924.3333333333333" y="-2605.2000000000003" font-size="30" fill="black" dy="1em">2</text>
+<text x="1744.3333333333333" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1924.3333333333333" y="-2575.2000000000003" font-size="30" fill="black" dy="1em">2</text>
+<text x="1744.3333333333333" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1924.3333333333333" y="-2545.2000000000003" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-2625.2000000000003" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1744.3333333333333" y="-2625.2000000000003" font-size="30" fill="black" dy="0em"></text>
+<path d="M1634.3333333333333,-2685.2000000000003 L2183.0,-2685.2000000000003" stroke-width="3" stroke="black" />
+<path d="M1634.3333333333333,-2788.0000000000005 L2183.0,-2788.0000000000005" stroke-width="2" stroke="gray" />
+<path d="M1634.3333333333333,-2890.8 L2183.0,-2890.8" stroke-width="2" stroke="gray" />
+<text x="2183.0" y="-2788.0000000000005" font-size="30" dy="0.4em">5</text>
+<text x="2183.0" y="-2890.8" font-size="30" dy="0.4em">10</text>
+<path d="M1716.5733333333333,-2685.2000000000003 L1716.5733333333333,-2849.6800000000003 L1778.2533333333333,-2931.9200000000005" stroke="red" stroke-width="10" fill="none" marker-end="url(#d8)" />
+<path d="M1908.6666666666665,-2685.2000000000003 L1908.6666666666665,-2788.0000000000005 L1949.7866666666666,-2788.0000000000005" stroke="green" stroke-width="10" fill="none" marker-end="url(#d9)" />
+<path d="M2004.7133333333331,-2685.2000000000003 L2004.7133333333331,-2788.0000000000005 L1963.593333333333,-2788.0000000000005" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d10)" />
+<path d="M2100.7599999999998,-2685.2000000000003 L2100.7599999999998,-2808.5600000000004 L2080.2,-2788.0000000000005" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d11)" />
+<path d="M1908.6666666666665,-2702.520508075689 L1888.6666666666665,-2670.2000000000003 L1928.6666666666665,-2670.2000000000003 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1716.5733333333333" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="2100.7599999999998" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="2004.7133333333331" cy="-2685.2000000000003" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M237.0,-2436.8 L905.6666666666666,-2436.8 L905.6666666666666,-1901.6 L237.0,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-2080.0 L905.6666666666666,-2080.0" stroke-width="2" stroke="black" />
+<text x="247.0" y="-2070.0" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="327.0" y="-2070.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-2040.0" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="327.0" y="-2040.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="247.0" y="-2010.0" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="327.0" y="-2010.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="247.0" y="-1980.0" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="327.0" y="-1980.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-1950.0" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="327.0" y="-1950.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="407.0" y="-2070.0" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="587.0" y="-2070.0" font-size="30" fill="black" dy="1em">2</text>
+<text x="407.0" y="-2040.0" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="587.0" y="-2040.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="407.0" y="-2010.0" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="587.0" y="-2010.0" font-size="30" fill="black" dy="1em">2</text>
+<text x="247.0" y="-2090.0" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="407.0" y="-2090.0" font-size="30" fill="black" dy="0em"></text>
+<path d="M297.0,-2150.0 L845.6666666666666,-2150.0" stroke-width="3" stroke="black" />
+<path d="M297.0,-2252.8 L845.6666666666666,-2252.8" stroke-width="2" stroke="gray" />
+<path d="M297.0,-2355.6 L845.6666666666666,-2355.6" stroke-width="2" stroke="gray" />
+<text x="845.6666666666666" y="-2252.8" font-size="30" dy="0.4em">5</text>
+<text x="845.6666666666666" y="-2355.6" font-size="30" dy="0.4em">10</text>
+<path d="M379.24,-2150.0 L379.24,-2355.6 L420.36,-2355.6" stroke="red" stroke-width="10" fill="none" marker-end="url(#d12)" />
+<path d="M571.3333333333333,-2150.0 L653.5733333333333,-2170.56" stroke="green" stroke-width="10" fill="none" marker-end="url(#d13)" />
+<path d="M667.3799999999999,-2150.0 L667.3799999999999,-2293.92 L626.2599999999999,-2335.04 L687.9399999999999,-2396.7200000000003" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d14)" />
+<path d="M763.4266666666666,-2150.0 L763.4266666666666,-2355.6 L804.5466666666666,-2355.6" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d15)" />
+<path d="M571.3333333333333,-2167.320508075689 L551.3333333333333,-2135.0 L591.3333333333333,-2135.0 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="379.24" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="763.4266666666666" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="667.3799999999999" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M905.6666666666666,-2436.8 L1574.3333333333333,-2436.8 L1574.3333333333333,-1901.6 L905.6666666666666,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-2080.0 L1574.3333333333333,-2080.0" stroke-width="2" stroke="black" />
+<text x="915.6666666666666" y="-2070.0" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="995.6666666666666" y="-2070.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-2040.0" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="995.6666666666666" y="-2040.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-2010.0" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="995.6666666666666" y="-2010.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-1980.0" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="995.6666666666666" y="-1980.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-1950.0" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="995.6666666666666" y="-1950.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-2070.0" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1255.6666666666665" y="-2070.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="1075.6666666666665" y="-2040.0" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1255.6666666666665" y="-2040.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="1075.6666666666665" y="-2010.0" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1255.6666666666665" y="-2010.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-2090.0" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1075.6666666666665" y="-2090.0" font-size="30" fill="black" dy="0em">A tight</text>
+<path d="M965.6666666666666,-2150.0 L1514.3333333333333,-2150.0" stroke-width="3" stroke="black" />
+<path d="M965.6666666666666,-2252.8 L1514.3333333333333,-2252.8" stroke-width="2" stroke="gray" />
+<path d="M965.6666666666666,-2355.6 L1514.3333333333333,-2355.6" stroke-width="2" stroke="gray" />
+<text x="1514.3333333333333" y="-2252.8" font-size="30" dy="0.4em">5</text>
+<text x="1514.3333333333333" y="-2355.6" font-size="30" dy="0.4em">10</text>
+<path d="M1047.9066666666668,-2150.0 L1047.9066666666668,-2252.8 L1006.7866666666667,-2252.8" stroke="red" stroke-width="10" fill="none" marker-end="url(#d16)" />
+<path d="M1240.0,-2150.0 L1240.0,-2314.48 L1178.32,-2396.7200000000003" stroke="green" stroke-width="10" fill="none" marker-end="url(#d17)" />
+<path d="M1336.0466666666666,-2150.0 L1418.2866666666666,-2170.56" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d18)" />
+<path d="M1432.0933333333332,-2150.0 L1432.0933333333332,-2252.8 L1390.9733333333331,-2252.8" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d19)" />
+<path d="M1240.0,-2167.320508075689 L1220.0,-2135.0 L1260.0,-2135.0 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1047.9066666666668" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="1432.0933333333332" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="1336.0466666666666" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
 <path d="M1574.3333333333333,-2436.8 L2243.0,-2436.8 L2243.0,-1901.6 L1574.3333333333333,-1901.6 Z" stroke="black" stroke-width="4" fill="none">
 <title>PlayBorder</title>
 </path>
 <path d="M1574.3333333333333,-2080.0 L2243.0,-2080.0" stroke-width="2" stroke="black" />
+<text x="1584.3333333333333" y="-2070.0" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="1664.3333333333333" y="-2070.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="1584.3333333333333" y="-2040.0" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="1664.3333333333333" y="-2040.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-2010.0" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="1664.3333333333333" y="-2010.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-1980.0" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="1664.3333333333333" y="-1980.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-1950.0" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="1664.3333333333333" y="-1950.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="1744.3333333333333" y="-2070.0" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1924.3333333333333" y="-2070.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-2040.0" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1924.3333333333333" y="-2040.0" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-2010.0" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1924.3333333333333" y="-2010.0" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-2090.0" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1744.3333333333333" y="-2090.0" font-size="30" fill="black" dy="0em">B tight</text>
+<path d="M1634.3333333333333,-2150.0 L2183.0,-2150.0" stroke-width="3" stroke="black" />
+<path d="M1634.3333333333333,-2252.8 L2183.0,-2252.8" stroke-width="2" stroke="gray" />
+<path d="M1634.3333333333333,-2355.6 L2183.0,-2355.6" stroke-width="2" stroke="gray" />
+<text x="2183.0" y="-2252.8" font-size="30" dy="0.4em">5</text>
+<text x="2183.0" y="-2355.6" font-size="30" dy="0.4em">10</text>
+<path d="M1716.5733333333333,-2150.0 L1716.5733333333333,-2396.7200000000003" stroke="red" stroke-width="10" fill="none" marker-end="url(#d20)" />
+<path d="M1908.6666666666665,-2150.0 L1908.6666666666665,-2314.48 L1846.9866666666665,-2396.7200000000003" stroke="green" stroke-width="10" fill="none" marker-end="url(#d21)" />
+<path d="M2004.7133333333331,-2150.0 L2004.7133333333331,-2252.8 L2045.8333333333333,-2252.8" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d22)" />
+<path d="M2100.7599999999998,-2150.0 L2100.7599999999998,-2252.8 L2059.64,-2252.8" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d23)" />
+<path d="M1908.6666666666665,-2167.320508075689 L1888.6666666666665,-2135.0 L1928.6666666666665,-2135.0 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1716.5733333333333" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="2100.7599999999998" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="2004.7133333333331" cy="-2150.0" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M237.0,-1901.6 L905.6666666666666,-1901.6 L905.6666666666666,-1366.3999999999999 L237.0,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-1544.8 L905.6666666666666,-1544.8" stroke-width="2" stroke="black" />
+<text x="247.0" y="-1534.8" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="327.0" y="-1534.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-1504.8" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="327.0" y="-1504.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-1474.8" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="327.0" y="-1474.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="247.0" y="-1444.8" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="327.0" y="-1444.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-1414.8" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="327.0" y="-1414.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="407.0" y="-1534.8" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="587.0" y="-1534.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="407.0" y="-1504.8" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="587.0" y="-1504.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="407.0" y="-1474.8" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="587.0" y="-1474.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-1554.8" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="407.0" y="-1554.8" font-size="30" fill="black" dy="0em"></text>
+<path d="M297.0,-1614.8 L845.6666666666666,-1614.8" stroke-width="3" stroke="black" />
+<path d="M297.0,-1717.6 L845.6666666666666,-1717.6" stroke-width="2" stroke="gray" />
+<path d="M297.0,-1820.4 L845.6666666666666,-1820.4" stroke-width="2" stroke="gray" />
+<text x="845.6666666666666" y="-1717.6" font-size="30" dy="0.4em">5</text>
+<text x="845.6666666666666" y="-1820.4" font-size="30" dy="0.4em">10</text>
+<path d="M379.24,-1614.8 L379.24,-1861.52" stroke="red" stroke-width="10" fill="none" marker-end="url(#d24)" />
+<path d="M571.3333333333333,-1614.8 L571.3333333333333,-1820.4 L612.4533333333333,-1820.4" stroke="green" stroke-width="10" fill="none" marker-end="url(#d25)" />
+<path d="M667.3799999999999,-1614.8 L667.3799999999999,-1779.28 L729.06,-1861.52" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d26)" />
+<path d="M763.4266666666666,-1614.8 L763.4266666666666,-1820.4 L722.3066666666666,-1820.4" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d27)" />
+<path d="M571.3333333333333,-1632.1205080756888 L551.3333333333333,-1599.8 L591.3333333333333,-1599.8 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="379.24" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="763.4266666666666" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="667.3799999999999" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M905.6666666666666,-1901.6 L1574.3333333333333,-1901.6 L1574.3333333333333,-1366.3999999999999 L905.6666666666666,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-1544.8 L1574.3333333333333,-1544.8" stroke-width="2" stroke="black" />
+<text x="915.6666666666666" y="-1534.8" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="995.6666666666666" y="-1534.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-1504.8" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="995.6666666666666" y="-1504.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-1474.8" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="995.6666666666666" y="-1474.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-1444.8" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="995.6666666666666" y="-1444.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-1414.8" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="995.6666666666666" y="-1414.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-1534.8" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1255.6666666666665" y="-1534.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="1075.6666666666665" y="-1504.8" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1255.6666666666665" y="-1504.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-1474.8" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1255.6666666666665" y="-1474.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-1554.8" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1075.6666666666665" y="-1554.8" font-size="30" fill="black" dy="0em"></text>
+<path d="M965.6666666666666,-1614.8 L1514.3333333333333,-1614.8" stroke-width="3" stroke="black" />
+<path d="M965.6666666666666,-1717.6 L1514.3333333333333,-1717.6" stroke-width="2" stroke="gray" />
+<path d="M965.6666666666666,-1820.4 L1514.3333333333333,-1820.4" stroke-width="2" stroke="gray" />
+<text x="1514.3333333333333" y="-1717.6" font-size="30" dy="0.4em">5</text>
+<text x="1514.3333333333333" y="-1820.4" font-size="30" dy="0.4em">10</text>
+<path d="M1047.9066666666668,-1614.8 L1047.9066666666668,-1861.52" stroke="red" stroke-width="10" fill="none" marker-end="url(#d28)" />
+<path d="M1240.0,-1614.8 L1322.24,-1635.36" stroke="green" stroke-width="10" fill="none" marker-end="url(#d29)" />
+<path d="M1336.0466666666666,-1614.8 L1253.8066666666666,-1676.48" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d30)" />
+<path d="M1432.0933333333332,-1614.8 L1349.8533333333332,-1676.48" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d31)" />
+<path d="M1240.0,-1632.1205080756888 L1220.0,-1599.8 L1260.0,-1599.8 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1047.9066666666668" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="1432.0933333333332" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="1336.0466666666666" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
 <path d="M1574.3333333333333,-1901.6 L2243.0,-1901.6 L2243.0,-1366.3999999999999 L1574.3333333333333,-1366.3999999999999 Z" stroke="black" stroke-width="4" fill="none">
 <title>PlayBorder</title>
 </path>
 <path d="M1574.3333333333333,-1544.8 L2243.0,-1544.8" stroke-width="2" stroke="black" />
+<text x="1584.3333333333333" y="-1534.8" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="1664.3333333333333" y="-1534.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-1504.8" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="1664.3333333333333" y="-1504.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-1474.8" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="1664.3333333333333" y="-1474.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="1584.3333333333333" y="-1444.8" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="1664.3333333333333" y="-1444.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-1414.8" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="1664.3333333333333" y="-1414.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="1744.3333333333333" y="-1534.8" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1924.3333333333333" y="-1534.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-1504.8" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1924.3333333333333" y="-1504.8" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-1474.8" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1924.3333333333333" y="-1474.8" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-1554.8" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1744.3333333333333" y="-1554.8" font-size="30" fill="black" dy="0em"></text>
+<path d="M1634.3333333333333,-1614.8 L2183.0,-1614.8" stroke-width="3" stroke="black" />
+<path d="M1634.3333333333333,-1717.6 L2183.0,-1717.6" stroke-width="2" stroke="gray" />
+<path d="M1634.3333333333333,-1820.4 L2183.0,-1820.4" stroke-width="2" stroke="gray" />
+<text x="2183.0" y="-1717.6" font-size="30" dy="0.4em">5</text>
+<text x="2183.0" y="-1820.4" font-size="30" dy="0.4em">10</text>
+<path d="M1716.5733333333333,-1614.8 L1716.5733333333333,-1779.28 L1778.2533333333333,-1861.52" stroke="red" stroke-width="10" fill="none" marker-end="url(#d32)" />
+<path d="M1908.6666666666665,-1614.8 L1908.6666666666665,-1820.4 L1949.7866666666666,-1820.4" stroke="green" stroke-width="10" fill="none" marker-end="url(#d33)" />
+<path d="M2004.7133333333331,-1614.8 L2004.7133333333331,-1820.4 L1963.593333333333,-1820.4" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d34)" />
+<path d="M2100.7599999999998,-1614.8 L2100.7599999999998,-1738.16 L2080.2,-1717.6" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d35)" />
+<path d="M1908.6666666666665,-1632.1205080756888 L1888.6666666666665,-1599.8 L1928.6666666666665,-1599.8 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1716.5733333333333" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="2100.7599999999998" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="2004.7133333333331" cy="-1614.8" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M237.0,-1366.3999999999999 L905.6666666666666,-1366.3999999999999 L905.6666666666666,-831.1999999999998 L237.0,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-1009.5999999999999 L905.6666666666666,-1009.5999999999999" stroke-width="2" stroke="black" />
+<text x="247.0" y="-999.5999999999999" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="327.0" y="-999.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-969.5999999999999" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="327.0" y="-969.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-939.5999999999999" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="327.0" y="-939.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-909.5999999999999" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="327.0" y="-909.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-879.5999999999999" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="327.0" y="-879.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="407.0" y="-999.5999999999999" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="587.0" y="-999.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="407.0" y="-969.5999999999999" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="587.0" y="-969.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="407.0" y="-939.5999999999999" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="587.0" y="-939.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-1019.5999999999999" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="407.0" y="-1019.5999999999999" font-size="30" fill="black" dy="0em"></text>
+<path d="M297.0,-1079.6 L845.6666666666666,-1079.6" stroke-width="3" stroke="black" />
+<path d="M297.0,-1182.3999999999999 L845.6666666666666,-1182.3999999999999" stroke-width="2" stroke="gray" />
+<path d="M297.0,-1285.2 L845.6666666666666,-1285.2" stroke-width="2" stroke="gray" />
+<text x="845.6666666666666" y="-1182.3999999999999" font-size="30" dy="0.4em">5</text>
+<text x="845.6666666666666" y="-1285.2" font-size="30" dy="0.4em">10</text>
+<path d="M379.24,-1079.6 L379.24,-1285.2 L420.36,-1285.2" stroke="red" stroke-width="10" fill="none" marker-end="url(#d36)" />
+<path d="M571.3333333333333,-1079.6 L571.3333333333333,-1182.3999999999999 L612.4533333333333,-1182.3999999999999" stroke="green" stroke-width="10" fill="none" marker-end="url(#d37)" />
+<path d="M667.3799999999999,-1079.6 L749.6199999999999,-1100.1599999999999" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d38)" />
+<path d="M763.4266666666666,-1079.6 L763.4266666666666,-1182.3999999999999 L722.3066666666666,-1182.3999999999999" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d39)" />
+<path d="M571.3333333333333,-1096.9205080756888 L551.3333333333333,-1064.6 L591.3333333333333,-1064.6 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="379.24" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="763.4266666666666" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="667.3799999999999" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M905.6666666666666,-1366.3999999999999 L1574.3333333333333,-1366.3999999999999 L1574.3333333333333,-831.1999999999998 L905.6666666666666,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-1009.5999999999999 L1574.3333333333333,-1009.5999999999999" stroke-width="2" stroke="black" />
+<text x="915.6666666666666" y="-999.5999999999999" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="995.6666666666666" y="-999.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-969.5999999999999" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="995.6666666666666" y="-969.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-939.5999999999999" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="995.6666666666666" y="-939.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-909.5999999999999" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="995.6666666666666" y="-909.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-879.5999999999999" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="995.6666666666666" y="-879.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-999.5999999999999" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1255.6666666666665" y="-999.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1075.6666666666665" y="-969.5999999999999" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1255.6666666666665" y="-969.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-939.5999999999999" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1255.6666666666665" y="-939.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-1019.5999999999999" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1075.6666666666665" y="-1019.5999999999999" font-size="30" fill="black" dy="0em"></text>
+<path d="M965.6666666666666,-1079.6 L1514.3333333333333,-1079.6" stroke-width="3" stroke="black" />
+<path d="M965.6666666666666,-1182.3999999999999 L1514.3333333333333,-1182.3999999999999" stroke-width="2" stroke="gray" />
+<path d="M965.6666666666666,-1285.2 L1514.3333333333333,-1285.2" stroke-width="2" stroke="gray" />
+<text x="1514.3333333333333" y="-1182.3999999999999" font-size="30" dy="0.4em">5</text>
+<text x="1514.3333333333333" y="-1285.2" font-size="30" dy="0.4em">10</text>
+<path d="M1047.9066666666668,-1079.6 L1047.9066666666668,-1285.2 L1089.0266666666669,-1285.2" stroke="red" stroke-width="10" fill="none" marker-end="url(#d40)" />
+<path d="M1240.0,-1079.6 L1240.0,-1244.08 L1178.32,-1326.32" stroke="green" stroke-width="10" fill="none" marker-end="url(#d41)" />
+<path d="M1336.0466666666666,-1079.6 L1253.8066666666666,-1141.28" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d42)" />
+<path d="M1432.0933333333332,-1079.6 L1370.4133333333332,-1141.28 L1493.7733333333333,-1141.28" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d43)" />
+<path d="M1240.0,-1096.9205080756888 L1220.0,-1064.6 L1260.0,-1064.6 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1047.9066666666668" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="1432.0933333333332" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="1336.0466666666666" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
 <path d="M1574.3333333333333,-1366.3999999999999 L2243.0,-1366.3999999999999 L2243.0,-831.1999999999998 L1574.3333333333333,-831.1999999999998 Z" stroke="black" stroke-width="4" fill="none">
 <title>PlayBorder</title>
 </path>
 <path d="M1574.3333333333333,-1009.5999999999999 L2243.0,-1009.5999999999999" stroke-width="2" stroke="black" />
+<text x="1584.3333333333333" y="-999.5999999999999" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="1664.3333333333333" y="-999.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-969.5999999999999" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="1664.3333333333333" y="-969.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-939.5999999999999" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="1664.3333333333333" y="-939.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-909.5999999999999" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="1664.3333333333333" y="-909.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-879.5999999999999" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="1664.3333333333333" y="-879.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-999.5999999999999" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1924.3333333333333" y="-999.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-969.5999999999999" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1924.3333333333333" y="-969.5999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-939.5999999999999" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1924.3333333333333" y="-939.5999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-1019.5999999999999" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1744.3333333333333" y="-1019.5999999999999" font-size="30" fill="black" dy="0em"></text>
+<path d="M1634.3333333333333,-1079.6 L2183.0,-1079.6" stroke-width="3" stroke="black" />
+<path d="M1634.3333333333333,-1182.3999999999999 L2183.0,-1182.3999999999999" stroke-width="2" stroke="gray" />
+<path d="M1634.3333333333333,-1285.2 L2183.0,-1285.2" stroke-width="2" stroke="gray" />
+<text x="2183.0" y="-1182.3999999999999" font-size="30" dy="0.4em">5</text>
+<text x="2183.0" y="-1285.2" font-size="30" dy="0.4em">10</text>
+<path d="M1716.5733333333333,-1079.6 L1716.5733333333333,-1285.2 L1757.6933333333334,-1285.2" stroke="red" stroke-width="10" fill="none" marker-end="url(#d44)" />
+<path d="M1908.6666666666665,-1079.6 L1826.4266666666665,-1141.28" stroke="green" stroke-width="10" fill="none" marker-end="url(#d45)" />
+<path d="M2004.7133333333331,-1079.6 L2086.9533333333334,-1100.1599999999999" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d46)" />
+<path d="M2100.7599999999998,-1079.6 L2100.7599999999998,-1285.2 L2059.64,-1285.2" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d47)" />
+<path d="M1908.6666666666665,-1096.9205080756888 L1888.6666666666665,-1064.6 L1928.6666666666665,-1064.6 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1716.5733333333333" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="2100.7599999999998" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="2004.7133333333331" cy="-1079.6" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M237.0,-831.1999999999998 L905.6666666666666,-831.1999999999998 L905.6666666666666,-296.0 L237.0,-296.0 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M237.0,-474.3999999999999 L905.6666666666666,-474.3999999999999" stroke-width="2" stroke="black" />
+<text x="247.0" y="-464.3999999999999" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="327.0" y="-464.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-434.3999999999999" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="327.0" y="-434.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="247.0" y="-404.3999999999999" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="327.0" y="-404.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-374.3999999999999" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="327.0" y="-374.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-344.3999999999999" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="327.0" y="-344.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="407.0" y="-464.3999999999999" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="587.0" y="-464.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="407.0" y="-434.3999999999999" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="587.0" y="-434.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="407.0" y="-404.3999999999999" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="587.0" y="-404.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="247.0" y="-484.3999999999999" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="407.0" y="-484.3999999999999" font-size="30" fill="black" dy="0em"></text>
+<path d="M297.0,-544.3999999999999 L845.6666666666666,-544.3999999999999" stroke-width="3" stroke="black" />
+<path d="M297.0,-647.1999999999998 L845.6666666666666,-647.1999999999998" stroke-width="2" stroke="gray" />
+<path d="M297.0,-749.9999999999998 L845.6666666666666,-749.9999999999998" stroke-width="2" stroke="gray" />
+<text x="845.6666666666666" y="-647.1999999999998" font-size="30" dy="0.4em">5</text>
+<text x="845.6666666666666" y="-749.9999999999998" font-size="30" dy="0.4em">10</text>
+<path d="M379.23999999999995,-544.3999999999999 L379.23999999999995,-749.9999999999998 L420.35999999999996,-749.9999999999998" stroke="red" stroke-width="10" fill="none" marker-end="url(#d48)" />
+<path d="M571.3333333333333,-544.3999999999999 L653.5733333333333,-564.9599999999998" stroke="green" stroke-width="10" fill="none" marker-end="url(#d49)" />
+<path d="M667.3799999999999,-544.3999999999999 L749.6199999999999,-564.9599999999998" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d50)" />
+<path d="M763.4266666666666,-544.3999999999999 L763.4266666666666,-647.1999999999998 L722.3066666666666,-647.1999999999998" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d51)" />
+<path d="M571.3333333333333,-561.7205080756886 L551.3333333333333,-529.3999999999999 L591.3333333333333,-529.3999999999999 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="379.23999999999995" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="763.4266666666666" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="667.3799999999999" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
+<path d="M905.6666666666666,-831.1999999999998 L1574.3333333333333,-831.1999999999998 L1574.3333333333333,-296.0 L905.6666666666666,-296.0 Z" stroke="black" stroke-width="4" fill="none">
+<title>PlayBorder</title>
+</path>
+<path d="M905.6666666666666,-474.3999999999999 L1574.3333333333333,-474.3999999999999" stroke-width="2" stroke="black" />
+<text x="915.6666666666666" y="-464.3999999999999" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="995.6666666666666" y="-464.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-434.3999999999999" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="995.6666666666666" y="-434.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-404.3999999999999" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="995.6666666666666" y="-404.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-374.3999999999999" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="995.6666666666666" y="-374.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="915.6666666666666" y="-344.3999999999999" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="995.6666666666666" y="-344.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-464.3999999999999" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1255.6666666666665" y="-464.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1075.6666666666665" y="-434.3999999999999" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1255.6666666666665" y="-434.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1075.6666666666665" y="-404.3999999999999" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1255.6666666666665" y="-404.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="915.6666666666666" y="-484.3999999999999" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1075.6666666666665" y="-484.3999999999999" font-size="30" fill="black" dy="0em"></text>
+<path d="M965.6666666666666,-544.3999999999999 L1514.3333333333333,-544.3999999999999" stroke-width="3" stroke="black" />
+<path d="M965.6666666666666,-647.1999999999998 L1514.3333333333333,-647.1999999999998" stroke-width="2" stroke="gray" />
+<path d="M965.6666666666666,-749.9999999999998 L1514.3333333333333,-749.9999999999998" stroke-width="2" stroke="gray" />
+<text x="1514.3333333333333" y="-647.1999999999998" font-size="30" dy="0.4em">5</text>
+<text x="1514.3333333333333" y="-749.9999999999998" font-size="30" dy="0.4em">10</text>
+<path d="M1047.9066666666665,-544.3999999999999 L1130.1466666666665,-606.0799999999998" stroke="red" stroke-width="10" fill="none" marker-end="url(#d52)" />
+<path d="M1240.0,-544.3999999999999 L1322.24,-564.9599999999998" stroke="green" stroke-width="10" fill="none" marker-end="url(#d53)" />
+<path d="M1336.0466666666666,-544.3999999999999 L1336.0466666666666,-708.8799999999998 L1397.7266666666667,-791.1199999999998" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d54)" />
+<path d="M1432.0933333333332,-544.3999999999999 L1432.0933333333332,-647.1999999999998 L1473.2133333333331,-647.1999999999998" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d55)" />
+<path d="M1240.0,-561.7205080756886 L1220.0,-529.3999999999999 L1260.0,-529.3999999999999 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1047.9066666666665" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="1432.0933333333332" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="1336.0466666666666" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
 <path d="M1574.3333333333333,-831.1999999999998 L2243.0,-831.1999999999998 L2243.0,-296.0 L1574.3333333333333,-296.0 Z" stroke="black" stroke-width="4" fill="none">
 <title>PlayBorder</title>
 </path>
 <path d="M1574.3333333333333,-474.3999999999999 L2243.0,-474.3999999999999" stroke-width="2" stroke="black" />
-<path d="M1000,-400 L1000,-800" stroke="red" stroke-width="10" fill="none" marker-end="url(#d0)" />
-<path d="M30,-20 L700,-500 L1200,-500" stroke="red" stroke-width="2" fill="none" marker-end="url(#d0)" />
+<text x="1584.3333333333333" y="-464.3999999999999" font-size="30" fill="black" dy="1em">1st:</text>
+<text x="1664.3333333333333" y="-464.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-434.3999999999999" font-size="30" fill="black" dy="1em">2nd:</text>
+<text x="1664.3333333333333" y="-434.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1584.3333333333333" y="-404.3999999999999" font-size="30" fill="black" dy="1em">3rd:</text>
+<text x="1664.3333333333333" y="-404.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-374.3999999999999" font-size="30" fill="black" dy="1em">4th:</text>
+<text x="1664.3333333333333" y="-374.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1584.3333333333333" y="-344.3999999999999" font-size="30" fill="black" dy="1em">PAT:</text>
+<text x="1664.3333333333333" y="-344.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1744.3333333333333" y="-464.3999999999999" font-size="30" fill="black" dy="1em">Total:</text>
+<text x="1924.3333333333333" y="-464.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1744.3333333333333" y="-434.3999999999999" font-size="30" fill="black" dy="1em">Strong right:</text>
+<text x="1924.3333333333333" y="-434.3999999999999" font-size="30" fill="black" dy="1em">0</text>
+<text x="1744.3333333333333" y="-404.3999999999999" font-size="30" fill="black" dy="1em">Strong left:</text>
+<text x="1924.3333333333333" y="-404.3999999999999" font-size="30" fill="black" dy="1em">1</text>
+<text x="1584.3333333333333" y="-484.3999999999999" font-size="30" fill="black" dy="0em">Formations:</text>
+<text x="1744.3333333333333" y="-484.3999999999999" font-size="30" fill="black" dy="0em">B tight</text>
+<path d="M1634.3333333333333,-544.3999999999999 L2183.0,-544.3999999999999" stroke-width="3" stroke="black" />
+<path d="M1634.3333333333333,-647.1999999999998 L2183.0,-647.1999999999998" stroke-width="2" stroke="gray" />
+<path d="M1634.3333333333333,-749.9999999999998 L2183.0,-749.9999999999998" stroke-width="2" stroke="gray" />
+<text x="2183.0" y="-647.1999999999998" font-size="30" dy="0.4em">5</text>
+<text x="2183.0" y="-749.9999999999998" font-size="30" dy="0.4em">10</text>
+<path d="M1716.5733333333333,-544.3999999999999 L1716.5733333333333,-667.7599999999998 L1737.1333333333332,-647.1999999999998" stroke="red" stroke-width="10" fill="none" marker-end="url(#d56)" />
+<path d="M1908.6666666666665,-544.3999999999999 L1846.9866666666665,-606.0799999999998 L1970.3466666666666,-606.0799999999998" stroke="green" stroke-width="10" fill="none" marker-end="url(#d57)" />
+<path d="M2004.7133333333334,-544.3999999999999 L2086.9533333333334,-564.9599999999998" stroke="orange" stroke-width="10" fill="none" marker-end="url(#d58)" />
+<path d="M2100.76,-544.3999999999999 L2100.76,-708.8799999999998 L2039.0800000000002,-791.1199999999998" stroke="blue" stroke-width="10" fill="none" marker-end="url(#d59)" />
+<path d="M1908.6666666666665,-561.7205080756886 L1888.6666666666665,-529.3999999999999 L1928.6666666666665,-529.3999999999999 Z" stroke-width="2" stroke="black" fill="green" />
+<circle cx="1716.5733333333333" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="red" />
+<circle cx="2100.76" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="blue" />
+<circle cx="2004.7133333333334" cy="-544.3999999999999" r="15" stroke-width="2" stroke="black" close="True" fill="yellow" />
 </svg>
