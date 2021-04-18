@@ -37,12 +37,12 @@ class SkoutPage:
         # return bottom coordinate of title block
         return titleCenter[1] - 180
 
-    def triangleAroundCenter(self, center, edgeLength):
+    def triangleAroundCenter(self, center, edgeLength, colour):
         halfHeight = 3**0.5 * edgeLength / 4.
         x0 = (center[0], center[1] + halfHeight)
         x1 = (x0[0] - edgeLength/2, center[1] - 3**0.5 / 2 * halfHeight)
         x2 = (x0[0] + edgeLength/2, x1[1])
-        triangle = draw.Lines(*x0, *x1, *x2, stroke_width=2, stroke='black', close=True, fill='green')
+        triangle = draw.Lines(*x0, *x1, *x2, stroke_width=2, stroke='black', close=True, fill=colour)
         return triangle
 
     def drawPlay(self, x0, y0, x1, y1, index):
@@ -93,11 +93,11 @@ class SkoutPage:
             # add path
             self.d.append(p)
 
-        # draw the Players
-        self.d.append(self.triangleAroundCenter(centerLOS, 40))
-        self.d.append(draw.Circle(*RecALOS, 15, stroke_width=2, stroke='black', close=True, fill='red'))
-        self.d.append(draw.Circle(*RecDLOS, 15, stroke_width=2, stroke='black', close=True, fill='blue'))
-        self.d.append(draw.Circle(*slotLOS, 15, stroke_width=2, stroke='black', close=True, fill='yellow'))
+            # draw the player
+            if(i == 1): # for the center, draw a triangle
+                self.d.append(self.triangleAroundCenter(centerLOS, 40, routeColors[i]))
+            else:
+                self.d.append(draw.Circle(*LOSPositions[i], 15, stroke_width=2, stroke='black', close=True, fill=routeColors[i]))
 
     # x0, y0 are min coords and x1, y1 are max coords
     def drawTile(self, x0, y0, x1, y1, index):
@@ -173,6 +173,3 @@ class SkoutPage:
         #d.setRenderSize(400,200)  # Alternative to setPixelScale
         fileName = self.stats.homeTeam + "_v_" + self.stats.awayTeam + "-" + self.stats.date.replace(".", "_") + ".svg"
         self.d.saveSvg(fileName)
-
-# page = skoutPage("homeTeam", "awayTeam", "01.01.2020", (13, 27))
-# page.draw()
