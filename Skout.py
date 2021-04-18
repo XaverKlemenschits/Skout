@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/env python3
 
 import argparse
 import json
@@ -16,8 +16,6 @@ def main():
   print("Reading from: {}".format(args.inputFiles))
 
   playList = PlayList()
-  teamName = ""
-  date = ""
   for fileName in args.inputFiles:
     with open(fileName) as json_file:
       data = json.load(json_file)

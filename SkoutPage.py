@@ -46,6 +46,9 @@ class SkoutPage:
         return triangle
 
     def drawPlay(self, x0, y0, x1, y1, index):
+        # draw play Number
+        self.d.append(draw.Text("#" + str(index+1), 30, x0, y1, font_weight='bold'))
+
         # draw LOS
         self.d.append(draw.Line(x0, y0, x1, y0, stroke_width=3, stroke="black"))
 
@@ -59,7 +62,6 @@ class SkoutPage:
         LOSPositions = [RecALOS, centerLOS, slotLOS, RecDLOS]
 
         # 5yd and 10yd lines
-        
         fiveYards = 5 * yard2Pixels
         tenYards = 10 * yard2Pixels
         self.d.append(draw.Line(x0, y0 + fiveYards, x1, y0 + fiveYards, stroke_width=2, stroke="gray"))
@@ -109,14 +111,13 @@ class SkoutPage:
         self.d.append(border)
 
         # area just for drawing the play
-        drawArea = (x1 - x0, (y0 - y1) / 3 * 2)
+        drawArea = (x1 - x0, (y1 - y0) / 3 * 2)
         # draw LOS
-        # print("LOS: {}".format(drawArea[1]))
-        self.d.append(draw.Line(x0, y0 - drawArea[1], x1, y0 - drawArea[1], stroke_width=2, stroke="black"))
+        self.d.append(draw.Line(x0, y1 - drawArea[1], x1, y1 - drawArea[1], stroke_width=2, stroke="black"))
 
         # print stats
         statsBorder = 10
-        statsBegin = (x0 + statsBorder, y0 - drawArea[1] - statsBorder)
+        statsBegin = (x0 + statsBorder, y1 - drawArea[1] - statsBorder)
         statsTextSize = 30
 
         # down counters
@@ -166,8 +167,8 @@ class SkoutPage:
         # draw all tiles
         for i in range(self.rows):
             for j in range(self.columns):
-                self.drawTile(tilesStart[0] + j * tileWidth, tilesStart[1] - i * tileHeight,
-                                tilesStart[0] + (j+1) * tileWidth, tilesStart[1] - (i+1) * tileHeight, i * self.columns + j)
+                self.drawTile(tilesStart[0] + j * tileWidth, tilesStart[1] - (i+1) * tileHeight,
+                                tilesStart[0] + (j+1) * tileWidth, tilesStart[1] - i * tileHeight, i * self.columns + j)
 
         self.d.setPixelScale(1)  # Set number of pixels per geometry unit
         #d.setRenderSize(400,200)  # Alternative to setPixelScale
