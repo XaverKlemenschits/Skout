@@ -8,7 +8,10 @@
             "routes": [8, 11, 1, 11],
             "formation": "A tight",
             "down": 1,
-            "strongside": "left"
+            "strongside": "left",
+            "clipnumber": 0,
+            "intendedReceiver": "A",
+            "yardsAtCatch": 10 
         }, {
             "routes": [8, 11, 1, 11],
             "formation": "A tight",

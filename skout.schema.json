@@ -59,6 +59,15 @@
               "description": "Number of the video clip the play was scouted from.",
               "type": "integer",
               "default": 0
+            },
+            "intendedReceiver": {
+              "description": "The receiver the ball was thrown to.",
+              "type": "string",
+              "enum": ["a", "A", "b", "B", "c", "C", "d", "D", "q", "Q"]
+            },
+            "yardsAtCatch": {
+              "description": "The number of yards after which the throw was caught",
+              "type": "integer"
             }
           },
           "required": ["routes", "formation", "down", "strongside"]
