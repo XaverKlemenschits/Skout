@@ -16,6 +16,14 @@
         "description": "The date the game was played.",
         "type": "string"
       },
+      "score": {
+        "description": "The final score of the game.",
+        "type": "array",
+        "items": {
+          "description": "Scouted team score first, then opponent score.",
+          "type": "integer"
+        }
+      },
       "plays": {
         "description": "Array of all the plays.",
         "type": "array",
