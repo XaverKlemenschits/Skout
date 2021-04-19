@@ -4,4 +4,7 @@
 *.svg
 *.json
 !skout.schema.json
+!example.skout.json
 __pycache__
+*.svg
+!TeamA_v_TeamB-01_01_2021.svg
