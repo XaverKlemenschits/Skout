@@ -19,7 +19,6 @@
 
 import argparse
 import json
-import numpy as np
 import sys
 from PlayList import PlayList
 from PlayStats import PlayStats
@@ -73,7 +72,7 @@ def main():
       if(not validate_json(data)):
         sys.exit(1)
 
-      listOfPlays = np.array(data['plays'])
+      listOfPlays = data['plays']
 
       playList.setTeamNames(data['team'], data.get('opponent', "nA"))
       playList.setDate(data.get('date', "nA"))

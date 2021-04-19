@@ -2,8 +2,6 @@
 #   Copyright (C) 2021  Xaver Klemenschits
 #   See LICENSE.txt for details
 
-import numpy as np
-
 class PlayStats:
     def incrementStrongSide(self, strongSideList, strongSideString):
         if(strongSideString == "right"):

@@ -2,7 +2,6 @@
 #   Copyright (C) 2021  Xaver Klemenschits
 #   See LICENSE.txt for details
 
-import numpy as np
 from Route import Route, RouteList
 
 class PlayList:

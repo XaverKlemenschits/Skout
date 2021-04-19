@@ -14,6 +14,7 @@
 - Python3
 - drawSvg (`pip3 install drawSvg`)
 - argparse (`pip3 install argparse`)
+- jsonschema (`pip3 install jsonschema`)
 
 ## Fromat of the .skout.json file
 
