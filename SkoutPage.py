@@ -133,7 +133,7 @@ class SkoutPage:
 
         # total and strong sides
         strongSideBeginX = downCountX + 80
-        strongSideX = strongSideBeginX + 180
+        strongSideX = strongSideBeginX + 200
         #total
         self.d.append(draw.Text("Total:", statsTextSize, strongSideBeginX, statsBegin[1], fill='black', valign='top'))
         self.d.append(draw.Text(str(self.stats.occurences[index]), statsTextSize, strongSideX, statsBegin[1], fill='black', valign='top'))
@@ -145,8 +145,8 @@ class SkoutPage:
 
         # formations
         formationsY = statsBegin[1] + 2*statsBorder
-        self.d.append(draw.Text("Formations:", statsTextSize, statsBegin[0], formationsY, fill='black'))
-        self.d.append(draw.Text(str(self.stats.getFormations(index)), statsTextSize, strongSideBeginX, formationsY, fill='black'))
+        self.d.append(draw.Text("Formations: " + self.stats.getFormations(index), statsTextSize, statsBegin[0], formationsY, fill='black'))
+        # self.d.append(draw.Text(str(self.stats.getFormations(index)), statsTextSize, statsBegin[0] + 200, formationsY, fill='black'))
 
         # draw the play itself
         playBorder = 60
