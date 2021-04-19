@@ -1,4 +1,7 @@
 *.pyc
 *.txt
+!LICENSE.txt
 *.svg
-
+*.json
+!skout.schema.json
+__pycache__

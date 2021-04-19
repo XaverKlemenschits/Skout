@@ -1,3 +1,7 @@
+# Skout - Flagfootball Scouting Analysis Tool
+#   Copyright (C) 2021  Xaver Klemenschits
+#   See LICENSE.txt for details
+
 import drawSvg as draw
 import Route
 import copy

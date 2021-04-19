@@ -1,4 +1,6 @@
-# Class for a list of plays
+# Skout - Flagfootball Scouting Analysis Tool
+#   Copyright (C) 2021  Xaver Klemenschits
+#   See LICENSE.txt for details
 
 import numpy as np
 from Route import Route, RouteList

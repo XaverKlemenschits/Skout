@@ -1,4 +1,7 @@
-# Definition of RouteTree class
+# Skout - Flagfootball Scouting Analysis Tool
+#   Copyright (C) 2021  Xaver Klemenschits
+#   See LICENSE.txt for details
+
 import sys
 class Route:
     routeNames = ["Stop",           # 0

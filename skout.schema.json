@@ -1,0 +1,61 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Skout",
+    "description": "FlagFootball scout plays and relevant information",
+    "type": "object",
+    "properties": {
+      "team": {
+        "description": "The name of the scouted team.",
+        "type": "string"
+      },
+      "opponent": {
+        "description": "The name of the team the scouted team was playing against.",
+        "type": "string"
+      },
+      "date": {
+        "description": "The date the game was played.",
+        "type": "string"
+      },
+      "plays": {
+        "description": "Array of all the plays.",
+        "type": "array",
+        "items": {
+          "description": "Object storing information about the play.",
+          "type": "object",
+          "properties": {
+            "routes": {
+              "description": "The routes the players were running in the receiver order ACBD.",
+              "type": "array",
+              "items": {
+                "description": "The route of a receiver.",
+                "type": "integer"
+              },
+              "default": [0, 0, 0, 0]
+            },
+            "formation": {
+              "description": "The alignment/formation of the receivers. Empty means spread.",
+              "type": "string",
+              "default": "Spread"
+            },
+            "down": {
+              "description": "The down the play was run in. 5 corresponds to PAT.",
+              "type": "integer",
+              "default": 1
+            },
+            "strongside": {
+              "description": "The side where more receivers aligned.",
+              "type": "string",
+              "default": "right"
+            },
+            "clipnumber": {
+              "description": "Number of the video clip the play was scouted from.",
+              "type": "integer",
+              "default": 0
+            }
+          },
+          "required": ["routes", "formation", "down", "strongside"]
+        }
+      }
+    },
+    "required": [ "team", "date", "plays" ]
+  }
