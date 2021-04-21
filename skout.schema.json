@@ -41,14 +41,20 @@
               "default": [0, 0, 0, 0]
             },
             "formation": {
-              "description": "The alignment/formation of the receivers. Empty means spread.",
+              "description": "The alignment/formation of the receivers. Empty means spread. A is always the weak side WR and D the strong side WR.",
               "type": "string",
-              "default": "Spread"
+              "default": "Spread",
+              "enum": ["","Spread", "A tight", "B tight", "B wide", "D tight", "Semi", "Tight", "Bunch", "Trips"]
             },
             "down": {
               "description": "The down the play was run in. 5 corresponds to PAT.",
               "type": "integer",
               "default": 1
+            },
+            "distance": {
+              "description": "The distance to the 1st down or goal line.",
+              "type": "integer",
+              "default": 20 
             },
             "strongside": {
               "description": "The side where more receivers aligned.",
@@ -68,6 +74,10 @@
             "yardsAtCatch": {
               "description": "The number of yards after which the throw was caught",
               "type": "integer"
+            },
+            "notes": {
+              "description": "Any other notes about this play like motions, special snap counts, etc.",
+              "type": "string"
             }
           },
           "required": ["routes", "formation", "down", "strongside"]

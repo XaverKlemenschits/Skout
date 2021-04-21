@@ -25,10 +25,12 @@ from PlayStats import PlayStats
 from SkoutPage import SkoutPage
 from jsonschema import validate
 import jsonschema
+import pathlib
 
 def get_schema():
     """This function loads the given schema available"""
-    with open('skout.schema.json', 'r') as file:
+    path = str(pathlib.Path(__file__).parent.absolute()) + '/skout.schema.json'
+    with open(path, 'r') as file:
         schema = json.load(file)
     return schema
 

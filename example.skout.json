@@ -95,7 +95,8 @@
             "strongside": "right"
         }, {
             "routes": [0, 0, 0, 0],
-            "formation": "B motion to left",
+            "formation": "",
+            "notes": "B motion to left",
             "down": 1,
             "strongside": "left"
         }, {

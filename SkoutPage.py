@@ -6,19 +6,39 @@ import drawSvg as draw
 import Route
 import copy
 
+cairoAvalaible = True
+try:
+    import cairosvg
+except OSError as e:
+    cairoAvalaible = False
+except ImportError as e:
+    cairoAvalaible = False
+
 class SkoutPage:
     drawingSize = (2480, 3508)
     drawingBorder = (474 / 2, 592 / 2)
     columns = 3
     rows = 5
 
-    def __init__(self, playStats):
+    def __init__(self, playStats, writeSvg=not cairoAvalaible):
         self.stats = playStats
         self.d = draw.Drawing(*self.drawingSize)
+        self.writeSvg = writeSvg
 
         # define static drawing objects
         self.arrowHead = draw.Marker(-0.1, -0.5, 0.9, 0.5, scale=4, orient='auto')
         # self.arrowHead.append(draw.Lines(-0.1, -0.5, -0.1, 0.5, 0.9, 0, fill='black', close=True))
+
+    def listAsComma(self, listData):
+        if(len(listData) == 0):
+            return ""
+        result = str(listData[0])
+        for i in range(1, len(listData)):
+            if(str(listData[i]) != ""):
+                if(result != ""):
+                    result = result + ", "
+                result = result + str(listData[i])
+        return result
 
     def drawBackground(self):
         r = draw.Rectangle(0, 0, *self.drawingSize, fill='#ffffff')
@@ -53,9 +73,6 @@ class SkoutPage:
         # draw play Number
         self.d.append(draw.Text("#" + str(index+1), 30, x0, y1, font_weight='bold'))
 
-        # draw LOS
-        self.d.append(draw.Line(x0, y0, x1, y0, stroke_width=3, stroke="black"))
-
         yard2Pixels = abs(y0 - y1) / 15. # the whole field are 15 yards
         sideLineBorder = 4 * yard2Pixels # routes are not allowed to extend further than 4 yds laterally
 
@@ -64,14 +81,6 @@ class SkoutPage:
         RecDLOS = (x1 - sideLineBorder, y0)
         slotLOS = (centerLOS[0] + (RecDLOS[0] - centerLOS[0]) / 2., y0)
         LOSPositions = [RecALOS, centerLOS, slotLOS, RecDLOS]
-
-        # 5yd and 10yd lines
-        fiveYards = 5 * yard2Pixels
-        tenYards = 10 * yard2Pixels
-        self.d.append(draw.Line(x0, y0 + fiveYards, x1, y0 + fiveYards, stroke_width=2, stroke="gray"))
-        self.d.append(draw.Line(x0, y0 + tenYards, x1, y0 + tenYards, stroke_width=2, stroke="gray"))
-        self.d.append(draw.Text("5", 30, x1, y0 + fiveYards, valign='middle'))
-        self.d.append(draw.Text("10", 30, x1, y0 + tenYards, valign='middle'))
 
         # draw the routes and players
         routeStrokeWidth = 10
@@ -92,7 +101,7 @@ class SkoutPage:
             for j in range(len(routePoints)):
                 xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
                 yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
-                if(i == 0): # invert x for A Receiver
+                if(i == 0 or i == 1): # invert x for A and C Receiver
                     xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
                 # move path by making line
                 p.L(xCoord, yCoord)
@@ -109,6 +118,9 @@ class SkoutPage:
     def drawTile(self, x0, y0, x1, y1, index):
         # print("Start: {}, {}".format(x0, y0))
         # print("End:   {}, {}".format(x1, y1))
+        # total number of plays in list
+        numberOfPlays = len(self.stats.routesList)
+
         # draw border around this play
         border = draw.Lines(x0, y0, x1, y0, x1, y1, x0, y1, stroke='black', stroke_width=4, close=True, fill='none')
         border.appendTitle("PlayBorder")
@@ -129,31 +141,57 @@ class SkoutPage:
         downCountersText = ("1st:", "2nd:", "3rd:", "4th:", "PAT:")
         for i in range(len(downCountersText)):
             self.d.append(draw.Text(downCountersText[i], statsTextSize, statsBegin[0], statsBegin[1] - i * statsTextSize, fill='black', valign='top'))
-            self.d.append(draw.Text(str(self.stats.downStats[index][i]), statsTextSize, downCountX, statsBegin[1] - i * statsTextSize, fill='black', valign='top'))
+            if (index < numberOfPlays):
+                self.d.append(draw.Text(str(self.stats.downStats[index][i]), statsTextSize, downCountX, statsBegin[1] - i * statsTextSize, fill='black', valign='top'))
 
         # total and strong sides
         strongSideBeginX = downCountX + 80
         strongSideX = strongSideBeginX + 200
         #total
         self.d.append(draw.Text("Total:", statsTextSize, strongSideBeginX, statsBegin[1], fill='black', valign='top'))
-        self.d.append(draw.Text(str(self.stats.occurences[index]), statsTextSize, strongSideX, statsBegin[1], fill='black', valign='top'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text(str(self.stats.occurences[index]), statsTextSize, strongSideX, statsBegin[1], fill='black', valign='top'))
         #strongsides
         self.d.append(draw.Text("Strong right:", statsTextSize, strongSideBeginX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
-        self.d.append(draw.Text(str(self.stats.strongSides[index][0]), statsTextSize, strongSideX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text(str(self.stats.strongSides[index][0]), statsTextSize, strongSideX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
         self.d.append(draw.Text("Strong left:", statsTextSize, strongSideBeginX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
-        self.d.append(draw.Text(str(self.stats.strongSides[index][1]), statsTextSize, strongSideX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text(str(self.stats.strongSides[index][1]), statsTextSize, strongSideX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
+        
+        # clipNumbers
+        self.d.append(draw.Text("vid#:", statsTextSize, strongSideBeginX, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text(self.listAsComma(self.stats.clipNumbers[index]), statsTextSize, strongSideBeginX + 100, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
 
         # formations
         formationsY = statsBegin[1] + 2*statsBorder
-        self.d.append(draw.Text("Formations: " + self.stats.getFormations(index), statsTextSize, statsBegin[0], formationsY, fill='black'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text("Formations: " + self.listAsComma(self.stats.formations[index]), statsTextSize, statsBegin[0], formationsY, fill='black'))
         # self.d.append(draw.Text(str(self.stats.getFormations(index)), statsTextSize, statsBegin[0] + 200, formationsY, fill='black'))
+
+        
 
         # draw the play itself
         playBorder = 60
         lowCorner = (x0 + playBorder, formationsY + playBorder)
         topCorner = (x1 - playBorder, y1 - playBorder)
-        self.drawPlay(*lowCorner, *topCorner, index)
 
+        # draw LOS
+        self.d.append(draw.Line(*lowCorner, topCorner[0], lowCorner[1], stroke_width=3, stroke="black"))
+
+        yard2Pixels = abs(lowCorner[1] - topCorner[1]) / 15. # the whole field are 15 yards
+        # 5yd and 10yd lines
+        fiveYards = 5 * yard2Pixels
+        tenYards = 10 * yard2Pixels
+        self.d.append(draw.Line(lowCorner[0], lowCorner[1] + fiveYards, topCorner[0], lowCorner[1] + fiveYards, stroke_width=2, stroke="gray"))
+        self.d.append(draw.Line(lowCorner[0], lowCorner[1] + tenYards, topCorner[0], lowCorner[1] + tenYards, stroke_width=2, stroke="gray"))
+        self.d.append(draw.Text("5", 30, topCorner[0], lowCorner[1] + fiveYards, valign='middle'))
+        self.d.append(draw.Text("10", 30, topCorner[0], lowCorner[1] + tenYards, valign='middle'))
+
+        # if there are still plays left to display, draw them
+        if (index < numberOfPlays):
+            self.drawPlay(*lowCorner, *topCorner, index)
 
     def makeSvg(self):
         # Background
@@ -176,5 +214,12 @@ class SkoutPage:
 
         self.d.setPixelScale(1)  # Set number of pixels per geometry unit
         #d.setRenderSize(400,200)  # Alternative to setPixelScale
-        fileName = self.stats.homeTeam + "_v_" + self.stats.awayTeam + "-" + self.stats.date.replace(".", "_") + ".svg"
-        self.d.saveSvg(fileName)
+        fileName = self.stats.homeTeam + "_v_" + self.stats.awayTeam + "-" + self.stats.date.replace(".", "_")
+
+        # write PDF if cairoSvg is available
+        if cairoAvalaible:
+            cairosvg.svg2pdf(bytestring=self.d.asSvg(), write_to=fileName + ".pdf")
+            print("Wrote Skout to file \'{}\'".format(fileName + ".pdf"))
+        if self.writeSvg:
+            self.d.saveSvg(fileName + ".svg")
+            print("Wrote Skout to file \'{}\'".format(fileName + ".svg"))

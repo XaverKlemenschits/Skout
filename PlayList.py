@@ -10,6 +10,7 @@ class PlayList:
         self.formations = []
         self.downs = []
         self.sides = []
+        self.clipNumbers = []
 
     def setTeamNames(self, home, away):
         self.homeTeam = home
@@ -32,6 +33,8 @@ class PlayList:
             self.formations.append(play['formation'])
             self.downs.append(play['down'])
             self.sides.append(play['strongside'])
+            # optional fields
+            self.clipNumbers.append(play.get('clipNumber', 0))
 
     def printAllPlays(self):
         for i in range(len(self.routes)):
@@ -45,6 +48,7 @@ class PlayList:
         self.swapEntry(i, j, self.formations)
         self.swapEntry(i, j, self.downs)
         self.swapEntry(i, j, self.sides)
+        self.swapEntry(i, j, self.clipNumbers)
 
     def sort(self):
         n = len(self.routes)

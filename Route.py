@@ -110,3 +110,6 @@ class RouteList:
 
     def __getitem__(self, i):
         return self.routes[i]
+
+    def __setitem__(self, i, val):
+        self.routes[i] = val

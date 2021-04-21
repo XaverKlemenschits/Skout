@@ -11,6 +11,9 @@ class PlayStats:
         else:
             print("Warning: Invalid StrongSide string!")
 
+    def switchStrongSide(self, routes):
+        routes[0], routes[1], routes[2], routes[3] = routes[3], routes[2], routes[1], routes[0]
+
     def swapEntry(self, i, j, swappable):
         swappable[i], swappable[j] = swappable[j], swappable[i]
 
@@ -20,6 +23,7 @@ class PlayStats:
         self.swapEntry(i, j, self.downStats)
         self.swapEntry(i, j, self.formations)
         self.swapEntry(i, j, self.strongSides)
+        self.swapEntry(i, j, self.clipNumbers)
 
     def __init__(self, playList):
         self.homeTeam = playList.homeTeam
@@ -32,11 +36,14 @@ class PlayStats:
         self.downStats = []
         self.formations = []
         self.strongSides = []
+        self.clipNumbers = []
         
         # Calculate stats from the passed playList
 
         # just push 1st element
         self.routesList.append(playList.routes[0])
+        if(playList.sides[0] == "left"):
+            self.switchStrongSide(self.routesList[-1])
         self.occurences.append(1)
         downList = [0,0,0,0,0]
         downList[playList.downs[0]-1] = 1
@@ -46,19 +53,26 @@ class PlayStats:
         strongside = [0,0]
         self.incrementStrongSide(strongside, playList.sides[0])
         self.strongSides.append(strongside)
+        self.clipNumbers.append([])
+        self.clipNumbers[-1].append(playList.clipNumbers[0])
 
         last = 0
         for i in range(1, len(playList.routes)):
+            currentRoute = playList.routes[i]
+            if(playList.sides[i] == "left"):
+                self.switchStrongSide(currentRoute)
+
             # routes are equal, so add onto earlier play
-            if(self.routesList[last] == playList.routes[i]):
+            if(self.routesList[last] == currentRoute):
                 self.occurences[last] += 1
                 self.downStats[last][playList.downs[i]-1] += 1
                 self.formations[last].append(playList.formations[i])
                 self.incrementStrongSide(self.strongSides[last], playList.sides[i])
+                self.clipNumbers[last].append(playList.clipNumbers[i])
 
             # routes are not equal, add new play to list
             else:
-                self.routesList.append(playList.routes[i])
+                self.routesList.append(currentRoute)
                 self.occurences.append(1)
                 downList = [0,0,0,0,0]
                 downList[playList.downs[i]-1] = 1
@@ -68,6 +82,8 @@ class PlayStats:
                 strongside = [0,0]
                 self.incrementStrongSide(strongside, playList.sides[i])
                 self.strongSides.append(strongside)
+                self.clipNumbers.append([])
+                self.clipNumbers[-1].append(playList.clipNumbers[i])
                 last += 1
 
         # bubble sort results after number of occurences
