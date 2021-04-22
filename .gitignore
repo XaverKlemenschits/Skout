@@ -8,3 +8,7 @@
 __pycache__
 *.svg
 !TeamA_v_TeamB-01_01_2021.svg
+*.pdf
+!TeamA_v_TeamB-01_01_2021.pdf
+Data
+jsonEditor

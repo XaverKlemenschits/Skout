@@ -44,7 +44,7 @@
               "description": "The alignment/formation of the receivers. Empty means spread. A is always the weak side WR and D the strong side WR.",
               "type": "string",
               "default": "Spread",
-              "enum": ["","Spread", "A tight", "B tight", "B wide", "D tight", "Semi", "Tight", "Bunch", "Trips"]
+              "enum": ["","Spread", "A tight", "B tight", "B wide", "D tight", "A Semi", "Tight", "Bunch", "Trips", "BD Stack"]
             },
             "down": {
               "description": "The down the play was run in. 5 corresponds to PAT.",

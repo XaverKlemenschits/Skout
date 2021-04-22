@@ -9,7 +9,7 @@ class PlayStats:
         elif(strongSideString == "left"):
             strongSideList[0] += 1
         else:
-            print("Warning: Invalid StrongSide string!")
+            print("Warning: Invalid StrongSide string: " + strongSideString)
 
     def switchStrongSide(self, routes):
         routes[0], routes[1], routes[2], routes[3] = routes[3], routes[2], routes[1], routes[0]
