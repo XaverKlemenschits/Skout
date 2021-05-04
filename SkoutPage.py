@@ -152,10 +152,10 @@ class SkoutPage:
         if (index < numberOfPlays):
             self.d.append(draw.Text(str(self.stats.occurences[index]), statsTextSize, strongSideX, statsBegin[1], fill='black', valign='top'))
         #strongsides
-        self.d.append(draw.Text("Strong right:", statsTextSize, strongSideBeginX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
+        self.d.append(draw.Text("Strong left:", statsTextSize, strongSideBeginX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
         if (index < numberOfPlays):
             self.d.append(draw.Text(str(self.stats.strongSides[index][0]), statsTextSize, strongSideX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
-        self.d.append(draw.Text("Strong left:", statsTextSize, strongSideBeginX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
+        self.d.append(draw.Text("Strong right:", statsTextSize, strongSideBeginX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
         if (index < numberOfPlays):
             self.d.append(draw.Text(str(self.stats.strongSides[index][1]), statsTextSize, strongSideX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
         
@@ -193,7 +193,12 @@ class SkoutPage:
         if (index < numberOfPlays):
             self.drawPlay(*lowCorner, *topCorner, index)
 
-    def makeSvg(self):
+    def makePage(self, pageNumber=None):
+        # set range of plays for this page
+        startIndex = 0
+        if(pageNumber is not None and pageNumber>0):
+            startIndex = (pageNumber-1) * self.columns * self.rows
+
         # Background
         self.drawBackground()
 
@@ -210,11 +215,13 @@ class SkoutPage:
         for i in range(self.rows):
             for j in range(self.columns):
                 self.drawTile(tilesStart[0] + j * tileWidth, tilesStart[1] - (i+1) * tileHeight,
-                                tilesStart[0] + (j+1) * tileWidth, tilesStart[1] - i * tileHeight, i * self.columns + j)
+                                tilesStart[0] + (j+1) * tileWidth, tilesStart[1] - i * tileHeight, startIndex + i * self.columns + j)
 
         self.d.setPixelScale(1)  # Set number of pixels per geometry unit
         #d.setRenderSize(400,200)  # Alternative to setPixelScale
         fileName = self.stats.homeTeam + "_v_" + self.stats.awayTeam + "-" + self.stats.date.replace(".", "_")
+        if(pageNumber is not None):
+            fileName = fileName + "_" + str(pageNumber)
 
         # write PDF if cairoSvg is available
         if cairoAvalaible:

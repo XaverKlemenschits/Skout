@@ -34,7 +34,7 @@ class PlayList:
             self.downs.append(play['down'])
             self.sides.append(play['strongside'])
             # optional fields
-            self.clipNumbers.append(play.get('clipNumber', 0))
+            self.clipNumbers.append(play.get('clipnumber', 0))
 
     def printAllPlays(self):
         for i in range(len(self.routes)):

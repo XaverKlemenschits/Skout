@@ -19,7 +19,9 @@ class Route:
                   "Pivot",          # 12
                   "Post-Corner",    # 13
                   "Reverse",        # 14
-                  "Quick In"        # 15
+                  "Quick In",       # 15
+                  "Yoyo",           # 16
+                  "Stop&Go"         # 17
                   ]
     # coordinates for the lines describing the routes
     routeCoords = [[[0, 6], [-1, 5]],
@@ -36,8 +38,10 @@ class Route:
                    [[0, 5], [2, 5]],
                    [[-3, 3], [3, 3]],
                    [[0, 7], [-2, 9], [1, 12]],
-                   [[-1, -1], [-1, 5]],
-                   [[-4, 1]]
+                   [[-1, -1], [-5, -1]],
+                   [[-4, 1]],
+                   [[3, 3], [-3, 3]],
+                   [[0, 6], [-1, 5], [0, 12]]
                     ]
 
 

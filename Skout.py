@@ -85,9 +85,13 @@ def main():
   stats = PlayStats(playList)
   # stats.print()
 
+  counter = 1
+  numPlays = 0
   page = SkoutPage(stats)
-  page.makeSvg()
-
+  while(numPlays < len(stats.routesList)):
+    page.makePage(counter)
+    numPlays = counter * page.rows * page.columns
+    counter = counter + 1
 
   
 if __name__ == "__main__":
