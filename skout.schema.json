@@ -75,6 +75,11 @@
               "description": "The number of yards after which the throw was caught",
               "type": "integer"
             },
+
+            "yardsTotal": {
+              "description": "The progression with this play in yards.",
+              "type": "integer"
+            },
             "notes": {
               "description": "Any other notes about this play like motions, special snap counts, etc.",
               "type": "string"
