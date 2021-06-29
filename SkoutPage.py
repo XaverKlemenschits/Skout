@@ -36,7 +36,7 @@ class SkoutPage:
         for i in range(1, len(listData)):
             if(str(listData[i]) != ""):
                 if(result != ""):
-                    result = result + ", "
+                    result = result + ","
                 result = result + str(listData[i])
         return result
 
@@ -144,25 +144,41 @@ class SkoutPage:
             if (index < numberOfPlays):
                 self.d.append(draw.Text(str(self.stats.downStats[index][i]), statsTextSize, downCountX, statsBegin[1] - i * statsTextSize, fill='black', valign='top'))
 
-        # total and strong sides
-        strongSideBeginX = downCountX + 80
-        strongSideX = strongSideBeginX + 200
+        # 2nd stats column: total and strong sides
+        column2X = downCountX + 80
+        column2ValueX = column2X + 160
         #total
-        self.d.append(draw.Text("Total:", statsTextSize, strongSideBeginX, statsBegin[1], fill='black', valign='top'))
+        self.d.append(draw.Text("Total:", statsTextSize, column2X, statsBegin[1], fill='black', valign='top'))
         if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.stats.occurences[index]), statsTextSize, strongSideX, statsBegin[1], fill='black', valign='top'))
+            self.d.append(draw.Text(str(self.stats.occurences[index]), statsTextSize, column2ValueX, statsBegin[1], fill='black', valign='top'))
         #strongsides
-        self.d.append(draw.Text("Strong left:", statsTextSize, strongSideBeginX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
+        self.d.append(draw.Text("SS left:", statsTextSize, column2X, statsBegin[1] - statsTextSize, fill='black', valign='top'))
         if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.stats.strongSides[index][0]), statsTextSize, strongSideX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
-        self.d.append(draw.Text("Strong right:", statsTextSize, strongSideBeginX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
+            self.d.append(draw.Text(str(self.stats.strongSides[index][0]), statsTextSize, column2ValueX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
+        self.d.append(draw.Text("SS right:", statsTextSize, column2X, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
         if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.stats.strongSides[index][1]), statsTextSize, strongSideX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
+            self.d.append(draw.Text(str(self.stats.strongSides[index][1]), statsTextSize, column2ValueX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
         
         # clipNumbers
-        self.d.append(draw.Text("vid#:", statsTextSize, strongSideBeginX, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
+        self.d.append(draw.Text("vid#:", statsTextSize, column2X, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
         if (index < numberOfPlays):
-            self.d.append(draw.Text(self.listAsComma(self.stats.clipNumbers[index]), statsTextSize, strongSideBeginX + 100, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
+            self.d.append(draw.Text(self.listAsComma(self.stats.clipNumbers[index]), statsTextSize, column2X + 100, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
+
+        # 3rd statistics columns
+        column3X = column2ValueX + 50
+        column3ValueX = column3X + 100
+        # distance
+        self.d.append(draw.Text("Dist:", statsTextSize, column3X, statsBegin[1], fill='black', valign='top'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text(str(self.listAsComma(self.stats.distances[index])), statsTextSize, column3ValueX, statsBegin[1], fill='black', valign='top'))
+        # progression
+        self.d.append(draw.Text("Yds:", statsTextSize, column3X, statsBegin[1]- statsTextSize, fill='black', valign='top'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text(str(self.listAsComma(self.stats.progressions[index])), statsTextSize, column3ValueX, statsBegin[1]- statsTextSize, fill='black', valign='top'))
+        # intended receiver
+        self.d.append(draw.Text("Rec:", statsTextSize, column3X, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
+        if (index < numberOfPlays):
+            self.d.append(draw.Text(str(self.listAsComma(self.stats.intRecs[index])), statsTextSize, column3ValueX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
 
         # formations
         formationsY = statsBegin[1] + 2*statsBorder

@@ -11,6 +11,9 @@ class PlayList:
         self.downs = []
         self.sides = []
         self.clipNumbers = []
+        self.progression = []
+        self.intRec = []
+        self.distance = []
 
     def setTeamNames(self, home, away):
         self.homeTeam = home
@@ -34,7 +37,10 @@ class PlayList:
             self.downs.append(play['down'])
             self.sides.append(play['strongside'])
             # optional fields
-            self.clipNumbers.append(play.get('clipnumber', 0))
+            self.clipNumbers.append(play.get('clipnumber', ''))
+            self.progression.append(play.get('yardsTotal', ''))
+            self.intRec.append(play.get('intendedReceiver', '').upper())
+            self.distance.append(play.get('distance', ''))
 
     def printAllPlays(self):
         for i in range(len(self.routes)):
@@ -49,6 +55,9 @@ class PlayList:
         self.swapEntry(i, j, self.downs)
         self.swapEntry(i, j, self.sides)
         self.swapEntry(i, j, self.clipNumbers)
+        self.swapEntry(i, j, self.progression)
+        self.swapEntry(i, j, self.intRec)
+        self.swapEntry(i, j, self.distance)
 
     def sort(self):
         n = len(self.routes)

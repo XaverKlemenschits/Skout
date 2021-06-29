@@ -76,9 +76,9 @@ def main():
 
       listOfPlays = data['plays']
 
-      playList.setTeamNames(data['team'], data.get('opponent', "nA"))
-      playList.setDate(data.get('date', "nA"))
-      score = data.get('score', ["nA", "nA"])
+      playList.setTeamNames(data['team'], data.get('opponent', ""))
+      playList.setDate(data.get('date', ""))
+      score = data.get('score', ["__", "__"])
       playList.setScore(score[0], score[1])
       playList.addPlays(listOfPlays)
 

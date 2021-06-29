@@ -22,9 +22,13 @@ class Route:
                   "Quick In",       # 15
                   "Yoyo",           # 16
                   "Stop&Go"         # 17
+                  "Out&Up"          # 18
+                  "Post Comeback"   # 19
+                  "Screen"          # 20
                   ]
     # coordinates for the lines describing the routes
-    routeCoords = [[[0, 6], [-1, 5]],
+    routeCoords = [[[0, 6],
+                   [-1, 5]],
                    [[4, 1]],
                    [[-4, 3]],
                    [[0, 12], [1, 10]],
@@ -41,7 +45,10 @@ class Route:
                    [[-1, -1], [-5, -1]],
                    [[-4, 1]],
                    [[3, 3], [-3, 3]],
-                   [[0, 6], [-1, 5], [0, 12]]
+                   [[0, 6], [-1, 5], [0, 12]],
+                   [[0, 5], [5, 5], [5, 12]],
+                   [[0, 8], [-3, 12], [-5, 11]],
+                   [[0, -1]]
                     ]
 
 

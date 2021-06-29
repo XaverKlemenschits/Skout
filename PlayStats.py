@@ -24,6 +24,9 @@ class PlayStats:
         self.swapEntry(i, j, self.formations)
         self.swapEntry(i, j, self.strongSides)
         self.swapEntry(i, j, self.clipNumbers)
+        self.swapEntry(i, j, self.progressions)
+        self.swapEntry(i, j, self.intRecs)
+        self.swapEntry(i, j, self.distances)
 
     def __init__(self, playList):
         self.homeTeam = playList.homeTeam
@@ -37,6 +40,9 @@ class PlayStats:
         self.formations = []
         self.strongSides = []
         self.clipNumbers = []
+        self.progressions = []
+        self.intRecs = []
+        self.distances = []
         
         # Calculate stats from the passed playList
 
@@ -55,6 +61,12 @@ class PlayStats:
         self.strongSides.append(strongside)
         self.clipNumbers.append([])
         self.clipNumbers[-1].append(playList.clipNumbers[0])
+        self.progressions.append([])
+        self.progressions[-1].append(playList.progression[0])
+        self.intRecs.append([])
+        self.intRecs[-1].append(playList.intRec[0])
+        self.distances.append([])
+        self.distances[-1].append(playList.distance[0])
 
         last = 0
         for i in range(1, len(playList.routes)):
@@ -69,6 +81,9 @@ class PlayStats:
                 self.formations[last].append(playList.formations[i])
                 self.incrementStrongSide(self.strongSides[last], playList.sides[i])
                 self.clipNumbers[last].append(playList.clipNumbers[i])
+                self.progressions[last].append(playList.progression[i])
+                self.intRecs[last].append(playList.intRec[i])
+                self.distances[last].append(playList.distance[i])
 
             # routes are not equal, add new play to list
             else:
@@ -84,6 +99,12 @@ class PlayStats:
                 self.strongSides.append(strongside)
                 self.clipNumbers.append([])
                 self.clipNumbers[-1].append(playList.clipNumbers[i])
+                self.progressions.append([])
+                self.progressions[-1].append(playList.progression[i])
+                self.intRecs.append([])
+                self.intRecs[-1].append(playList.intRec[i])
+                self.distances.append([])
+                self.distances[-1].append(playList.distance[i])
                 last += 1
 
         # bubble sort results after number of occurences

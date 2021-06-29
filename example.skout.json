@@ -8,10 +8,13 @@
             "routes": [8, 11, 1, 11],
             "formation": "A tight",
             "down": 1,
+            "distance": 20,
             "strongside": "left",
             "clipnumber": 0,
             "intendedReceiver": "A",
-            "yardsAtCatch": 10 
+            "yardsAtCatch": 10,
+            "yardsTotal": 0,
+            "notes": "1st of game"
         }, {
             "routes": [8, 11, 1, 11],
             "formation": "A tight",
