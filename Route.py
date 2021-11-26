@@ -3,6 +3,8 @@
 #   See LICENSE.txt for details
 
 import sys
+
+
 class Route:
     routeNames = ["Stop",           # 0
                   "Quick Out",      # 1
@@ -21,10 +23,10 @@ class Route:
                   "Reverse",        # 14
                   "Quick In",       # 15
                   "Yoyo",           # 16
-                  "Stop&Go"         # 17
-                  "Out&Up"          # 18
-                  "Post Comeback"   # 19
-                  "Screen"          # 20
+                  "Stop&Go",        # 17
+                  "Out&Up",         # 18
+                  "Post Comeback",  # 19
+                  "Screen",         # 20
                   ]
     # coordinates for the lines describing the routes
     routeCoords = [[[0, 6],
@@ -49,11 +51,10 @@ class Route:
                    [[0, 5], [5, 5], [5, 12]],
                    [[0, 8], [-3, 12], [-5, 11]],
                    [[0, -1]]
-                    ]
-
+                   ]
 
     def __init__(self, r=0):
-        self.route = r
+        self.setRoute(r)
 
     def setRoute(self, r):
         if(type(r) == str):
@@ -66,10 +67,11 @@ class Route:
             if(not foundRoute):
                 print("Error: Could not find route: {}".format(r))
                 sys.exit()
-            
+
         else:
-            if(r >= len(self.routeNames)):
-                print("Error: Route out of bounds: {}".format(r))
+            if(r < 0 or r >= len(self.routeNames)):
+                print(
+                    "Error: Route {} is not defined! Allowed routes are 0 - {}".format(r, len(self.routeNames)-1))
                 sys.exit()
             else:
                 self.route = r
@@ -83,12 +85,14 @@ class Route:
     def __str__(self):
         return self.routeNames[self.route]
 
+
 class RouteList:
     numberOfRoutes = 4
 
     def __init__(self, routes=[]):
         if(len(routes) != self.numberOfRoutes):
-            print("Warning: RouteList must have exactly {} routes!".format(self.numberOfRoutes))
+            print("Warning: RouteList must have exactly {} routes!".format(
+                self.numberOfRoutes))
 
         if(type(routes[0]) != Route):
             self.routes = []
@@ -103,7 +107,7 @@ class RouteList:
                 return True
             elif(self.routes[i].route > other[i].route):
                 return False
-        
+
         return False
 
     def __eq__(self, other):
@@ -116,7 +120,7 @@ class RouteList:
         outputStr = "["
         for i in range(len(self.routes)-1):
             outputStr = outputStr + str(self.routes[i]) + ", "
-        outputStr = outputStr + str(self.routes[self.numberOfRoutes-1]) +  "]"
+        outputStr = outputStr + str(self.routes[self.numberOfRoutes-1]) + "]"
         return outputStr
 
     def __getitem__(self, i):
