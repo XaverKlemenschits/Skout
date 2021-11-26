@@ -3,16 +3,17 @@
 #   See LICENSE.txt for details
 
 import drawSvg as draw
-import Route
+# import Route
 import copy
+import cairosvg
 
-cairoAvalaible = True
-try:
-    import cairosvg
-except OSError as e:
-    cairoAvalaible = False
-except ImportError as e:
-    cairoAvalaible = False
+# cairoAvalaible = True
+# try:
+#    import cairosvg
+# except OSError as e:
+#     cairoAvalaible = False
+# except ImportError as e:
+#     cairoAvalaible = False
 
 class SkoutPage:
     drawingSize = (2480, 3508)
@@ -20,10 +21,10 @@ class SkoutPage:
     columns = 3
     rows = 5
 
-    def __init__(self, playStats, writeSvg=not cairoAvalaible):
+    def __init__(self, playStats):
         self.stats = playStats
         self.d = draw.Drawing(*self.drawingSize)
-        self.writeSvg = writeSvg
+        # self.writeSvg = writeSvg
 
         # define static drawing objects
         self.arrowHead = draw.Marker(-0.1, -0.5, 0.9, 0.5, scale=4, orient='auto')
@@ -235,14 +236,18 @@ class SkoutPage:
 
         self.d.setPixelScale(1)  # Set number of pixels per geometry unit
         #d.setRenderSize(400,200)  # Alternative to setPixelScale
-        fileName = self.stats.homeTeam + "_v_" + self.stats.awayTeam + "-" + self.stats.date.replace(".", "_")
-        if(pageNumber is not None):
-            fileName = fileName + "_" + str(pageNumber)
+
+
+        # fileName = self.stats.homeTeam + "_v_" + self.stats.awayTeam + "-" + self.stats.date.replace(".", "_")
+        # if(pageNumber is not None):
+        #     fileName = fileName + "_" + str(pageNumber)
 
         # write PDF if cairoSvg is available
-        if cairoAvalaible:
-            cairosvg.svg2pdf(bytestring=self.d.asSvg(), write_to=fileName + ".pdf")
-            print("Wrote Skout to file \'{}\'".format(fileName + ".pdf"))
-        if self.writeSvg:
-            self.d.saveSvg(fileName + ".svg")
-            print("Wrote Skout to file \'{}\'".format(fileName + ".svg"))
+        return cairosvg.svg2pdf(bytestring=self.d.asSvg())
+
+        # if cairoAvalaible:
+        #     cairosvg.svg2pdf(bytestring=self.d.asSvg(), write_to=fileName + ".pdf")
+        #     print("Wrote Skout to file \'{}\'".format(fileName + ".pdf"))
+        # if self.writeSvg:
+        #     self.d.saveSvg(fileName + ".svg")
+        #     print("Wrote Skout to file \'{}\'".format(fileName + ".svg"))

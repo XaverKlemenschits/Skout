@@ -25,13 +25,20 @@ from PlayStats import PlayStats
 from SkoutPage import SkoutPage
 from jsonschema import validate
 import jsonschema
-import pathlib
+from io import BytesIO
+# import pathlib
+from PyPDF2 import PdfFileMerger
 
-def get_schema():
+def get_schema(path):
     """This function loads the given schema available"""
-    path = str(pathlib.Path(__file__).parent.absolute()) + '/skout.schema.json'
-    with open(path, 'r') as file:
-        schema = json.load(file)
+    # path = 'skout.schema.json'
+    # path = str(pathlib.Path(__file__).parent.absolute()) + '/skout.schema.json'
+    try:
+      with open(path, 'r') as file:
+          schema = json.load(file)
+    except IOError:
+      print("Cannot open skout.schema file: \"{}\". Make sure it exists or specify the correct path using the -s option. For more details use the option --help.".format(path))
+      sys.exit(1);
     return schema
 
 def listAsIndices(listOfIndices):
@@ -41,10 +48,10 @@ def listAsIndices(listOfIndices):
     return result
 
 
-def validate_json(json_data):
+def validate_json(schemaFile, json_data):
     """REF: https://json-schema.org/ """
     # Describe what kind of json you expect.
-    execute_api_schema = get_schema()
+    execute_api_schema = get_schema(schemaFile)
 
     try:
         validate(instance=json_data, schema=execute_api_schema)
@@ -61,17 +68,19 @@ def validate_json(json_data):
 
 def main():
   parser = argparse.ArgumentParser(description='Make PDF output for scouting statistics.')
-  parser.add_argument('inputFiles', metavar='File.json', nargs='+',
+  parser.add_argument('inputFiles', metavar='Skout.json', nargs='+',
                       help='The names of the input files.')
+  parser.add_argument('-s', metavar='skout.schema.json', nargs=1, help='The schema file used for syntax checking the skout.json file', dest='schemaFile', default=['skout.schema.json'])
 
   args = parser.parse_args()
   print("Reading from: {}".format(args.inputFiles))
+  print("Schema file: {}".format(args.schemaFile))
 
   playList = PlayList()
   for fileName in args.inputFiles:
     with open(fileName) as json_file:
       data = json.load(json_file)
-      if(not validate_json(data)):
+      if(not validate_json(args.schemaFile[0], data)):
         sys.exit(1)
 
       listOfPlays = data['plays']
@@ -85,15 +94,22 @@ def main():
   stats = PlayStats(playList)
   # stats.print()
 
+  # initialize pdf merger
+  merger = PdfFileMerger()
+  outputName = stats.homeTeam + "_v_" + stats.awayTeam + "-" + stats.date.replace(".", "_") + ".pdf"
+
   counter = 1
   numPlays = 0
   page = SkoutPage(stats)
   while(numPlays < len(stats.routesList)):
-    page.makePage(counter)
+    merger.append(BytesIO(page.makePage(counter)))
     numPlays = counter * page.rows * page.columns
     counter = counter + 1
 
-  
+  merger.write(outputName)
+  merger.close()
+  print("Wrote Skout to file \'{}\'".format(outputName))
+
 if __name__ == "__main__":
   #Run as main program
   main()
