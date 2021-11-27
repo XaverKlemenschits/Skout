@@ -7,14 +7,6 @@ import drawSvg as draw
 import copy
 import cairosvg
 
-# cairoAvalaible = True
-# try:
-#    import cairosvg
-# except OSError as e:
-#     cairoAvalaible = False
-# except ImportError as e:
-#     cairoAvalaible = False
-
 class SkoutPage:
     drawingSize = (2480, 3508)
     drawingBorder = (474 / 2, 592 / 2)
