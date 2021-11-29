@@ -54,7 +54,7 @@ jobs:
           mkdir release
           cp example.skout.json dist/
           cp skout.schema.json dist/
-          if [ "$RUNNER_OS" = "Windows"]
+          if [ "$RUNNER_OS" = "Windows" ]
           then
             7z a -r "release/${{ matrix.zip_name }}.zip" dist
           else
