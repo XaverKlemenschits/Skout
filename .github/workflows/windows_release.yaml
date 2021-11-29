@@ -1,9 +1,9 @@
-name: "Tagged Linux Release"
+name: "Tagged Windows Release"
 
 on:
   push:
     tags:
-      - "v*"
+      - "v*.*.*"
 
 jobs:
   build-release:
@@ -28,7 +28,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          title: "Skout_Linux-${GITHUB_REF#refs/*/}"
+          title: "Skout_Windows-${GITHUB_REF#refs/*/}"
           files: |
             dist/Skout
             example.skout.json
