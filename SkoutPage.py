@@ -139,7 +139,7 @@ class SkoutPage:
 
     def drawPlay(self, x0, y0, x1, y1, index):
         # draw play Number
-        self.d.setFont(self.boldFont, 30)
+        # self.d.setFont(self.boldFont, 30)
         self.d.setStrokeColor('black')
         self.d.setFillColor('black')
         self.d.drawString(x0, y1, '#' + str(index + 1))
@@ -171,43 +171,6 @@ class SkoutPage:
                             LOSPositions[i][1] + y * yard2Pixels] for [x, y] in routePoints]
 
             self.makeRouteArrow(LOSPositions[i], routePoints, 15)
-            # p = self.d.beginPath()
-            # p.moveTo(*LOSPositions[i])
-
-            # for j in range(len(routePoints)):
-            #     xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
-            #     yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
-            #     if(i == 0 or i == 1): # invert x for A and C Receiver
-            #         xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
-            #     p.lineTo(xCoord, yCoord)
-
-            # self.d.drawPath(p)
-            
-            # # draw shape at the end
-            # j = len(routePoints)-1
-            # xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
-            # yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
-            # if(i == 0 or i == 1): # invert x for A and C Receiver
-            #     xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
-            # p.circle(xCoord, yCoord, 15)
-
-            # arrow = copy.deepcopy(self.arrowHead)
-            # arrow.append(draw.Lines(-0.1, -0.5, -0.1, 0.5, 0.9, 0, fill=routeColors[i], close=True))
-            # # make path with arrowHead at the end
-            # p = draw.Path(stroke=routeColors[i], stroke_width=routeStrokeWidth, fill='none',
-            #         marker_end=arrow)
-            # # move to start position of player
-            # p.M(*LOSPositions[i])
-            # # lines according to route
-            # for j in range(len(routePoints)):
-            #     xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
-            #     yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
-            #     if(i == 0 or i == 1): # invert x for A and C Receiver
-            #         xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
-            #     # move path by making line
-            #     p.L(xCoord, yCoord)
-            # # add path
-            # self.d.append(p)
 
             # draw the player
             self.d.setStrokeColor('black')
@@ -243,37 +206,38 @@ class SkoutPage:
         statsBegin = (x0 + statsBorder, y1 - drawArea[1] - statsBorder)
         statsTextSize = 30
         statsTop = statsBegin[1] - statsTextSize / 1.5
+        self.d.setFontSize(statsTextSize)
 
         # down counters
         downCountX = statsBegin[0] + 80
         downCountersText = ("1st:", "2nd:", "3rd:", "4th:", "PAT:")
 
         for i in range(len(downCountersText)):
-            self.d.setFont(self.boldFont, statsTextSize)
+            # self.d.setFont(self.boldFont, statsTextSize)
             self.d.drawString(statsBegin[0], statsTop - i * statsTextSize, downCountersText[i])
             if (index < numberOfPlays):
-                self.d.setFont(self.font, statsTextSize)
+                # self.d.setFont(self.font, statsTextSize)
                 self.d.drawString(downCountX, statsTop - i * statsTextSize, str(self.stats.downStats[index][i]))
 
         # 2nd stats column: total and strong sides
         column2X = downCountX + 80
         column2ValueX = column2X + 160
         #total
-        self.d.setFont(self.boldFont, statsTextSize)
+        # self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(column2X, statsTop, "Total:")
         if (index < numberOfPlays):
-            self.d.setFont(self.font, statsTextSize)
+            # self.d.setFont(self.font, statsTextSize)
             self.d.drawString(column2ValueX, statsTop, str(self.stats.occurences[index]))
 
         # strongsides and clipnumbers
-        self.d.setFont(self.boldFont, statsTextSize)
+        # self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(column2X, statsTop - statsTextSize, "SS left:")
         self.d.drawString(column2X, statsTop - 2 * statsTextSize, "SS right:")
 
         self.d.drawString(column2X, statsTop - 4 * statsTextSize, "vid#:")
 
         if (index < numberOfPlays):
-            self.d.setFont(self.font, statsTextSize)
+            # self.d.setFont(self.font, statsTextSize)
             self.d.drawString(column2ValueX, statsTop - statsTextSize, str(self.stats.strongSides[index][0]))
             self.d.drawString(column2ValueX, statsTop - 2 * statsTextSize, str(self.stats.strongSides[index][1]))
             self.d.drawString(column2X + 3 * statsTextSize, statsTop - 4 * statsTextSize, self.listAsComma(self.stats.clipNumbers[index]))
@@ -282,22 +246,22 @@ class SkoutPage:
         column3X = column2ValueX + 50
         column3ValueX = column3X + 70
         # distance
-        self.d.setFont(self.boldFont, statsTextSize)
+        # self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(column3X, statsTop, "Dist:")
         self.d.drawString(column3X, statsTop - statsTextSize, "Yds:")
         self.d.drawString(column3X, statsTop - 2 * statsTextSize, "Rec:")
         if (index < numberOfPlays):
-            self.d.setFont(self.font, statsTextSize)
+            # self.d.setFont(self.font, statsTextSize)
             self.d.drawString(column3ValueX, statsTop, self.listAsComma(self.stats.distances[index]))
             self.d.drawString(column3ValueX, statsTop - statsTextSize, self.listAsComma(self.stats.progressions[index]))
             self.d.drawString(column3ValueX, statsTop - 2 * statsTextSize, self.listAsComma(self.stats.intRecs[index]))
         
         # formations
         formationsY = statsBegin[1] + 2*statsBorder
-        self.d.setFont(self.boldFont, statsTextSize)
+        # self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(statsBegin[0], formationsY, "Form.:")
         if (index < numberOfPlays):
-            self.d.setFont(self.font, statsTextSize)
+            # self.d.setFont(self.font, statsTextSize)
             self.d.drawString(statsBegin[0] + 3.5 * statsTextSize, formationsY, self.listAsComma(self.stats.formations[index]))        
 
         # draw the play itself
@@ -321,7 +285,7 @@ class SkoutPage:
 
         halfFontSize = self.getTextBounds('5', statsTextSize)[1] / 2.
         distanceMarkerPadding = 1.5 * statsTextSize
-        self.d.setFont(self.font, statsTextSize)
+        # self.d.setFont(self.font, statsTextSize)
         self.d.setFillColor('gray')
         self.d.drawRightString(topCorner[0] + distanceMarkerPadding, lowCorner[1] + fiveYards - halfFontSize, '5')
         self.d.drawRightString(topCorner[0] + distanceMarkerPadding, lowCorner[1] + tenYards - halfFontSize, '10')

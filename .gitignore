@@ -10,7 +10,6 @@
 __pycache__
 *.pdf
 !TeamA_v_TeamB-01_01_2021.pdf
-Skout.spec
 build*
 dist*
 Data
