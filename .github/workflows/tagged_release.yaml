@@ -12,7 +12,7 @@ jobs:
     outputs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
-      - name: Create release
+      - name: create new release
         id: create_release
         uses: actions/create-release@v1
         env:
