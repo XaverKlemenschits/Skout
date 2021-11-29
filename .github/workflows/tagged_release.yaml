@@ -1,0 +1,72 @@
+name: "Tagged Release"
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  create_release:
+    name: Create release
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: "Skout-${{github.ref_name}}"
+
+  build_release:
+    name: "Release"
+    needs: create_release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            zip_name: "Skout_Linux-${{github.ref_name}}"
+          - os: windows-latest
+            zip_name: "Skout_Windows-${{github.ref_name}}"
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller
+          pip install -r requirements.txt
+      - name: Build with pyinstaller
+        run: |
+          pyinstaller --onefile Skout.py
+
+      - name: Compress
+        shell: bash
+        run: |
+          mkdir release
+          cp example.skout.json dist/
+          cp skout.schema.json dist/
+          if [ "$RUNNER_OS" = "Windows"]
+          then
+            7z a -r "release/${{ matrix.zip_name }}.zip" dist
+          else
+            zip -r "release/${{ matrix.zip_name }}.zip" dist
+          fi
+
+      - name: Upload
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          asset_path: release/${{ matrix.zip_name }}.zip
+          asset_name: ${{ matrix.zip_name }}.zip
+          asset_content_type: application/zip
