@@ -2,25 +2,26 @@
 #   Copyright (C) 2021  Xaver Klemenschits
 #   See LICENSE.txt for details
 
-import drawSvg as draw
+#import drawSvg as draw
+from os import stat
+from reportlab.pdfgen import canvas, textobject
+from reportlab.graphics.widgets import markers
+from reportlab.graphics.charts.textlabels import _text2Path
+from reportlab.graphics.widgets.signsandsymbols import ArrowOne
 # import Route
 import copy
-import cairosvg
 
 class SkoutPage:
     drawingSize = (2480, 3508)
     drawingBorder = (474 / 2, 592 / 2)
     columns = 3
     rows = 5
+    font = 'Helvetica'
+    boldFont = 'Helvetica-Bold'
 
-    def __init__(self, playStats):
+    def __init__(self, playStats, outputName):
         self.stats = playStats
-        self.d = draw.Drawing(*self.drawingSize)
-        # self.writeSvg = writeSvg
-
-        # define static drawing objects
-        self.arrowHead = draw.Marker(-0.1, -0.5, 0.9, 0.5, scale=4, orient='auto')
-        # self.arrowHead.append(draw.Lines(-0.1, -0.5, -0.1, 0.5, 0.9, 0, fill='black', close=True))
+        self.d = canvas.Canvas(filename=outputName, pagesize=self.drawingSize, bottomup=1)
 
     def listAsComma(self, listData):
         if(len(listData) == 0):
@@ -33,38 +34,115 @@ class SkoutPage:
                 result = result + str(listData[i])
         return result
 
+    def getTextBounds(self, text, size, font=None):
+        '''
+        This function returns the size of the passed text,
+        when drawn as (x-extent, y-extent)
+        '''
+        if font is None:
+            font = self.font
+        p = _text2Path(text, fontName=font, fontSize=size)
+        bounds = p.getBounds()
+        return (bounds[2] - bounds[0], bounds[3] - bounds[1])
+
     def drawBackground(self):
-        r = draw.Rectangle(0, 0, *self.drawingSize, fill='#ffffff')
-        r.appendTitle("Background")
-        self.d.append(r)
+        self.d.setFillColor('white')
+        self.d.rect(0, 0, *self.drawingSize, stroke=0, fill=1)
 
     def drawTitle(self):
-        titleCenter = (self.drawingSize[0]/2, self.drawingSize[1] - self.drawingBorder[1])
-        titleText = draw.Text('Skout Report', 100, *titleCenter, center=True, fill='black')
-        self.d.append(titleText)
+        coords = (self.drawingSize[0]/2, self.drawingSize[1] - self.drawingBorder[1])
+        self.d.setFillColor('black')
+        self.d.setFontSize(100)
+        self.d.drawCentredString(*coords, 'Skout Report')
 
         # home and away teams
-        homeText = draw.Text('Home: {}\nAway: {}'.format(self.stats.homeTeam, self.stats.awayTeam), 60, self.drawingSize[0]/4, titleCenter[1] - 120, fill='black')
-        self.d.append(homeText)
+        fontSize = 60
+        textAlignLeft = self.drawingSize[0] / 6
+        textAlignTop = coords[1] - 2 * fontSize
+
+        coords = [textAlignLeft, textAlignTop]
+        self.d.setFontSize(fontSize)
+        # home
+        self.d.drawString(*coords, 'Home:')
+        coords[0] = coords[0] + 4 * fontSize
+        self.d.drawString(*coords, self.stats.homeTeam)
+        # away
+        coords = [textAlignLeft, coords[1] - 1.1 * fontSize]
+        self.d.drawString(*coords, 'Away:')
+        coords[0] = coords[0] + 4 * fontSize
+        self.d.drawString(*coords, self.stats.awayTeam)
 
         # Final Score and date
-        dateText = draw.Text("Date: {}\nScore: {} - {}".format(self.stats.date, self.stats.score[0], self.stats.score[1]), 60, self.drawingSize[0]/2 + 200, titleCenter[1] - 120, fill='black')
-        self.d.append(dateText)
+        textAlignLeft = self.drawingSize[0] * 5 / 6 - 10 * fontSize
+        coords = [textAlignLeft, textAlignTop]
+        # date
+        self.d.drawString(*coords, 'Date:')
+        coords[0] = coords[0] + 4 * fontSize
+        self.d.drawString(*coords, self.stats.date)
+        # score
+        coords = [textAlignLeft, coords[1] - 1.1 * fontSize]
+        self.d.drawString(*coords, 'Score:')
+        coords[0] = coords[0] + 4 * fontSize
+        self.d.drawString(*coords, '{} - {}'.format(*self.stats.score))
 
         # return bottom coordinate of title block
-        return titleCenter[1] - 180
+        return coords[1] - 60
 
     def triangleAroundCenter(self, center, edgeLength, colour):
         halfHeight = 3**0.5 * edgeLength / 4.
         x0 = (center[0], center[1] + halfHeight)
         x1 = (x0[0] - edgeLength/2, center[1] - 3**0.5 / 2 * halfHeight)
         x2 = (x0[0] + edgeLength/2, x1[1])
-        triangle = draw.Lines(*x0, *x1, *x2, stroke_width=2, stroke='black', close=True, fill=colour)
-        return triangle
+        # draw path
+        path = self.d.beginPath()
+        path.moveTo(*x0)
+        path.lineTo(*x1)
+        path.lineTo(*x2)
+        path.close()
+        # set up style
+        self.d.setLineWidth(2)
+        self.d.setStrokeColor('black')
+        self.d.setFillColor(colour)
+        # draw path
+        self.d.drawPath(path, stroke=1, fill=1)
+    
+    def L2Norm(self, normal):
+        sum = (normal[0]**2 + normal[1]**2)**0.5
+        return [i / sum for i in normal]
+
+    def makeRouteArrow(self, origin, nodes, arrowLength=15):
+        arrowPath = [[-arrowLength/2.,-0.1], [0, arrowLength], [arrowLength/2., -0.1]]
+        
+        p = self.d.beginPath()
+        p.moveTo(*origin)
+        for j in range(len(nodes)):
+                p.lineTo(nodes[j][0], nodes[j][1])
+        self.d.drawPath(p)
+
+        # draw arrow head
+        normal = [nodes[-1][0] - origin[0], nodes[-1][1] - origin[1]]
+        if (len(nodes) > 1):
+            normal = [normal[0] - nodes[-2][0] + origin[0], normal[1] - nodes[-2][1] + origin[1]]
+
+        # normalize normal
+        normal = self.L2Norm(normal)
+        cosine = normal[1]
+        sine = -normal[0]
+
+        arrowPath = [[x * cosine - y * sine, x * sine + y * cosine] for [x, y] in arrowPath]
+        p = self.d.beginPath()
+        p.moveTo(*nodes[-1])
+        for coord in arrowPath:
+            p.lineTo(nodes[-1][0] + coord[0], nodes[-1][1] + coord[1])
+        p.close()
+        self.d.drawPath(p, fill=1)
 
     def drawPlay(self, x0, y0, x1, y1, index):
         # draw play Number
-        self.d.append(draw.Text("#" + str(index+1), 30, x0, y1, font_weight='bold'))
+        self.d.setFont(self.boldFont, 30)
+        self.d.setStrokeColor('black')
+        self.d.setFillColor('black')
+        self.d.drawString(x0, y1, '#' + str(index + 1))
 
         yard2Pixels = abs(y0 - y1) / 15. # the whole field are 15 yards
         sideLineBorder = 4 * yard2Pixels # routes are not allowed to extend further than 4 yds laterally
@@ -76,36 +154,70 @@ class SkoutPage:
         LOSPositions = [RecALOS, centerLOS, slotLOS, RecDLOS]
 
         # draw the routes and players
-        routeStrokeWidth = 10
+        routeStrokeWidth = 8
         routeColors = ['red', 'green', 'orange', 'blue']
         
         for i in range(4):
             # Route
-            routePoints = self.stats.routesList[index][i].getRoutePath()
-            #define arrowHead for the route
-            arrow = copy.deepcopy(self.arrowHead)
-            arrow.append(draw.Lines(-0.1, -0.5, -0.1, 0.5, 0.9, 0, fill=routeColors[i], close=True))
-            # make path with arrowHead at the end
-            p = draw.Path(stroke=routeColors[i], stroke_width=routeStrokeWidth, fill='none',
-                    marker_end=arrow)
-            # move to start position of player
-            p.M(*LOSPositions[i])
-            # lines according to route
-            for j in range(len(routePoints)):
-                xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
-                yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
-                if(i == 0 or i == 1): # invert x for A and C Receiver
-                    xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
-                # move path by making line
-                p.L(xCoord, yCoord)
-            # add path
-            self.d.append(p)
+            routePoints = copy.deepcopy(self.stats.routesList[index][i].getRoutePath())
+            self.d.setFillColor(routeColors[i])
+            self.d.setStrokeColor(routeColors[i])
+            self.d.setLineWidth(routeStrokeWidth)
+
+            if (i == 0 or i == 1): # invert x for A and C Receiver
+                routePoints = [[-x, y] for [x, y] in routePoints]
+
+            routePoints = [[LOSPositions[i][0] + x * yard2Pixels,
+                            LOSPositions[i][1] + y * yard2Pixels] for [x, y] in routePoints]
+
+            self.makeRouteArrow(LOSPositions[i], routePoints, 15)
+            # p = self.d.beginPath()
+            # p.moveTo(*LOSPositions[i])
+
+            # for j in range(len(routePoints)):
+            #     xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
+            #     yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
+            #     if(i == 0 or i == 1): # invert x for A and C Receiver
+            #         xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
+            #     p.lineTo(xCoord, yCoord)
+
+            # self.d.drawPath(p)
+            
+            # # draw shape at the end
+            # j = len(routePoints)-1
+            # xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
+            # yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
+            # if(i == 0 or i == 1): # invert x for A and C Receiver
+            #     xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
+            # p.circle(xCoord, yCoord, 15)
+
+            # arrow = copy.deepcopy(self.arrowHead)
+            # arrow.append(draw.Lines(-0.1, -0.5, -0.1, 0.5, 0.9, 0, fill=routeColors[i], close=True))
+            # # make path with arrowHead at the end
+            # p = draw.Path(stroke=routeColors[i], stroke_width=routeStrokeWidth, fill='none',
+            #         marker_end=arrow)
+            # # move to start position of player
+            # p.M(*LOSPositions[i])
+            # # lines according to route
+            # for j in range(len(routePoints)):
+            #     xCoord = LOSPositions[i][0] + routePoints[j][0] * yard2Pixels
+            #     yCoord = LOSPositions[i][1] + routePoints[j][1] * yard2Pixels
+            #     if(i == 0 or i == 1): # invert x for A and C Receiver
+            #         xCoord = LOSPositions[i][0] - routePoints[j][0] * yard2Pixels
+            #     # move path by making line
+            #     p.L(xCoord, yCoord)
+            # # add path
+            # self.d.append(p)
 
             # draw the player
+            self.d.setStrokeColor('black')
             if(i == 1): # for the center, draw a triangle
-                self.d.append(self.triangleAroundCenter(centerLOS, 40, routeColors[i]))
+                self.triangleAroundCenter(centerLOS, 40, routeColors[i])
+                # self.d.append(self.triangleAroundCenter(centerLOS, 40, routeColors[i]))
             else:
-                self.d.append(draw.Circle(*LOSPositions[i], 15, stroke_width=2, stroke='black', close=True, fill=routeColors[i]))
+                self.d.setLineWidth(2)
+                self.d.circle(*LOSPositions[i], 15, fill=1)
+                # self.d.append(draw.Circle(*LOSPositions[i], 15, stroke_width=2, stroke='black', close=True, fill=routeColors[i]))
 
     # x0, y0 are min coords and x1, y1 are max coords
     def drawTile(self, x0, y0, x1, y1, index):
@@ -115,71 +227,78 @@ class SkoutPage:
         numberOfPlays = len(self.stats.routesList)
 
         # draw border around this play
-        border = draw.Lines(x0, y0, x1, y0, x1, y1, x0, y1, stroke='black', stroke_width=4, close=True, fill='none')
-        border.appendTitle("PlayBorder")
-        self.d.append(border)
+        self.d.setLineWidth(6)
+        self.d.setStrokeColor('black')
+        self.d.setFillColor('black')
+        self.d.rect(x0, y0, x1 - x0, y1 - y0)
 
         # area just for drawing the play
         drawArea = (x1 - x0, (y1 - y0) / 3 * 2)
-        # draw LOS
-        self.d.append(draw.Line(x0, y1 - drawArea[1], x1, y1 - drawArea[1], stroke_width=2, stroke="black"))
-
+        # draw stats separator
+        self.d.line(x0, y1 - drawArea[1], x1, y1 - drawArea[1])
+        # self.d.append(draw.Line(x0, y1 - drawArea[1], x1, y1 - drawArea[1], stroke_width=2, stroke="black"))
+        
         # print stats
         statsBorder = 10
         statsBegin = (x0 + statsBorder, y1 - drawArea[1] - statsBorder)
         statsTextSize = 30
+        statsTop = statsBegin[1] - statsTextSize / 1.5
 
         # down counters
         downCountX = statsBegin[0] + 80
         downCountersText = ("1st:", "2nd:", "3rd:", "4th:", "PAT:")
+
         for i in range(len(downCountersText)):
-            self.d.append(draw.Text(downCountersText[i], statsTextSize, statsBegin[0], statsBegin[1] - i * statsTextSize, fill='black', valign='top'))
+            self.d.setFont(self.boldFont, statsTextSize)
+            self.d.drawString(statsBegin[0], statsTop - i * statsTextSize, downCountersText[i])
             if (index < numberOfPlays):
-                self.d.append(draw.Text(str(self.stats.downStats[index][i]), statsTextSize, downCountX, statsBegin[1] - i * statsTextSize, fill='black', valign='top'))
+                self.d.setFont(self.font, statsTextSize)
+                self.d.drawString(downCountX, statsTop - i * statsTextSize, str(self.stats.downStats[index][i]))
 
         # 2nd stats column: total and strong sides
         column2X = downCountX + 80
         column2ValueX = column2X + 160
         #total
-        self.d.append(draw.Text("Total:", statsTextSize, column2X, statsBegin[1], fill='black', valign='top'))
+        self.d.setFont(self.boldFont, statsTextSize)
+        self.d.drawString(column2X, statsTop, "Total:")
         if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.stats.occurences[index]), statsTextSize, column2ValueX, statsBegin[1], fill='black', valign='top'))
-        #strongsides
-        self.d.append(draw.Text("SS left:", statsTextSize, column2X, statsBegin[1] - statsTextSize, fill='black', valign='top'))
+            self.d.setFont(self.font, statsTextSize)
+            self.d.drawString(column2ValueX, statsTop, str(self.stats.occurences[index]))
+
+        # strongsides and clipnumbers
+        self.d.setFont(self.boldFont, statsTextSize)
+        self.d.drawString(column2X, statsTop - statsTextSize, "SS left:")
+        self.d.drawString(column2X, statsTop - 2 * statsTextSize, "SS right:")
+
+        self.d.drawString(column2X, statsTop - 4 * statsTextSize, "vid#:")
+
         if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.stats.strongSides[index][0]), statsTextSize, column2ValueX, statsBegin[1] - statsTextSize, fill='black', valign='top'))
-        self.d.append(draw.Text("SS right:", statsTextSize, column2X, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
-        if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.stats.strongSides[index][1]), statsTextSize, column2ValueX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
-        
-        # clipNumbers
-        self.d.append(draw.Text("vid#:", statsTextSize, column2X, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
-        if (index < numberOfPlays):
-            self.d.append(draw.Text(self.listAsComma(self.stats.clipNumbers[index]), statsTextSize, column2X + 100, statsBegin[1] - 4*statsTextSize, fill='black', valign='top'))
+            self.d.setFont(self.font, statsTextSize)
+            self.d.drawString(column2ValueX, statsTop - statsTextSize, str(self.stats.strongSides[index][0]))
+            self.d.drawString(column2ValueX, statsTop - 2 * statsTextSize, str(self.stats.strongSides[index][1]))
+            self.d.drawString(column2X + 3 * statsTextSize, statsTop - 4 * statsTextSize, self.listAsComma(self.stats.clipNumbers[index]))
 
         # 3rd statistics columns
         column3X = column2ValueX + 50
-        column3ValueX = column3X + 100
+        column3ValueX = column3X + 70
         # distance
-        self.d.append(draw.Text("Dist:", statsTextSize, column3X, statsBegin[1], fill='black', valign='top'))
+        self.d.setFont(self.boldFont, statsTextSize)
+        self.d.drawString(column3X, statsTop, "Dist:")
+        self.d.drawString(column3X, statsTop - statsTextSize, "Yds:")
+        self.d.drawString(column3X, statsTop - 2 * statsTextSize, "Rec:")
         if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.listAsComma(self.stats.distances[index])), statsTextSize, column3ValueX, statsBegin[1], fill='black', valign='top'))
-        # progression
-        self.d.append(draw.Text("Yds:", statsTextSize, column3X, statsBegin[1]- statsTextSize, fill='black', valign='top'))
-        if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.listAsComma(self.stats.progressions[index])), statsTextSize, column3ValueX, statsBegin[1]- statsTextSize, fill='black', valign='top'))
-        # intended receiver
-        self.d.append(draw.Text("Rec:", statsTextSize, column3X, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
-        if (index < numberOfPlays):
-            self.d.append(draw.Text(str(self.listAsComma(self.stats.intRecs[index])), statsTextSize, column3ValueX, statsBegin[1] - 2*statsTextSize, fill='black', valign='top'))
-
+            self.d.setFont(self.font, statsTextSize)
+            self.d.drawString(column3ValueX, statsTop, self.listAsComma(self.stats.distances[index]))
+            self.d.drawString(column3ValueX, statsTop - statsTextSize, self.listAsComma(self.stats.progressions[index]))
+            self.d.drawString(column3ValueX, statsTop - 2 * statsTextSize, self.listAsComma(self.stats.intRecs[index]))
+        
         # formations
         formationsY = statsBegin[1] + 2*statsBorder
+        self.d.setFont(self.boldFont, statsTextSize)
+        self.d.drawString(statsBegin[0], formationsY, "Form.:")
         if (index < numberOfPlays):
-            self.d.append(draw.Text("Formations: " + self.listAsComma(self.stats.formations[index]), statsTextSize, statsBegin[0], formationsY, fill='black'))
-        # self.d.append(draw.Text(str(self.stats.getFormations(index)), statsTextSize, statsBegin[0] + 200, formationsY, fill='black'))
-
-        
+            self.d.setFont(self.font, statsTextSize)
+            self.d.drawString(statsBegin[0] + 3.5 * statsTextSize, formationsY, self.listAsComma(self.stats.formations[index]))        
 
         # draw the play itself
         playBorder = 60
@@ -187,17 +306,26 @@ class SkoutPage:
         topCorner = (x1 - playBorder, y1 - playBorder)
 
         # draw LOS
-        self.d.append(draw.Line(*lowCorner, topCorner[0], lowCorner[1], stroke_width=3, stroke="black"))
+        self.d.setLineWidth(3)
+        self.d.line(*lowCorner, topCorner[0], lowCorner[1])
 
         yard2Pixels = abs(lowCorner[1] - topCorner[1]) / 15. # the whole field are 15 yards
         # 5yd and 10yd lines
         fiveYards = 5 * yard2Pixels
         tenYards = 10 * yard2Pixels
-        self.d.append(draw.Line(lowCorner[0], lowCorner[1] + fiveYards, topCorner[0], lowCorner[1] + fiveYards, stroke_width=2, stroke="gray"))
-        self.d.append(draw.Line(lowCorner[0], lowCorner[1] + tenYards, topCorner[0], lowCorner[1] + tenYards, stroke_width=2, stroke="gray"))
-        self.d.append(draw.Text("5", 30, topCorner[0], lowCorner[1] + fiveYards, valign='middle'))
-        self.d.append(draw.Text("10", 30, topCorner[0], lowCorner[1] + tenYards, valign='middle'))
 
+        self.d.setLineWidth(3)
+        self.d.setStrokeColor('gray')
+        self.d.line(lowCorner[0], lowCorner[1] + fiveYards, topCorner[0], lowCorner[1] + fiveYards)
+        self.d.line(lowCorner[0], lowCorner[1] + tenYards, topCorner[0], lowCorner[1] + tenYards)
+
+        halfFontSize = self.getTextBounds('5', statsTextSize)[1] / 2.
+        distanceMarkerPadding = 1.5 * statsTextSize
+        self.d.setFont(self.font, statsTextSize)
+        self.d.setFillColor('gray')
+        self.d.drawRightString(topCorner[0] + distanceMarkerPadding, lowCorner[1] + fiveYards - halfFontSize, '5')
+        self.d.drawRightString(topCorner[0] + distanceMarkerPadding, lowCorner[1] + tenYards - halfFontSize, '10')
+        
         # if there are still plays left to display, draw them
         if (index < numberOfPlays):
             self.drawPlay(*lowCorner, *topCorner, index)
@@ -226,20 +354,9 @@ class SkoutPage:
                 self.drawTile(tilesStart[0] + j * tileWidth, tilesStart[1] - (i+1) * tileHeight,
                                 tilesStart[0] + (j+1) * tileWidth, tilesStart[1] - i * tileHeight, startIndex + i * self.columns + j)
 
-        self.d.setPixelScale(1)  # Set number of pixels per geometry unit
-        #d.setRenderSize(400,200)  # Alternative to setPixelScale
+        # finish this page (a new one will only be created if additional drawing operations are performed)
+        self.d.showPage()
 
 
-        # fileName = self.stats.homeTeam + "_v_" + self.stats.awayTeam + "-" + self.stats.date.replace(".", "_")
-        # if(pageNumber is not None):
-        #     fileName = fileName + "_" + str(pageNumber)
-
-        # write PDF if cairoSvg is available
-        return cairosvg.svg2pdf(bytestring=self.d.asSvg())
-
-        # if cairoAvalaible:
-        #     cairosvg.svg2pdf(bytestring=self.d.asSvg(), write_to=fileName + ".pdf")
-        #     print("Wrote Skout to file \'{}\'".format(fileName + ".pdf"))
-        # if self.writeSvg:
-        #     self.d.saveSvg(fileName + ".svg")
-        #     print("Wrote Skout to file \'{}\'".format(fileName + ".svg"))
+    def savePDF(self):
+        self.d.save()

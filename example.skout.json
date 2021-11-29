@@ -19,11 +19,13 @@
             "routes": [8, 11, 1, 11],
             "formation": "A tight",
             "down": 2,
+            "clipnumber": 1,
             "strongside": "left"
         }, {
             "routes": [8, 11, 1, 11],
             "formation": "A tight",
             "down": 1,
+            "clipnumber": 14,
             "strongside": "left"
         }, {
             "routes": [11, 8, 1, 10],

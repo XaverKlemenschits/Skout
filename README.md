@@ -98,11 +98,9 @@ When specifying the routes, you have to use numbers since route names are not re
 ## Dependencies
 
 - Python3
-- drawSvg (`pip3 install drawSvg`)
+- reportlab (`pip3 install reportlab`)
 - argparse (`pip3 install argparse`)
 - jsonschema (`pip3 install jsonschema`)
-- cairosvg (`pip3 install cairosvg`)
-- PyPDF2 (`pip3 install pypdf2`)
 
 ## Contributing
 

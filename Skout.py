@@ -26,8 +26,8 @@ from SkoutPage import SkoutPage
 from jsonschema import validate
 import jsonschema
 from io import BytesIO
+from reportlab.pdfgen import canvas
 # import pathlib
-from PyPDF2 import PdfFileMerger
 
 def get_schema(path):
     """This function loads the given schema available"""
@@ -94,20 +94,17 @@ def main():
   stats = PlayStats(playList)
   # stats.print()
 
-  # initialize pdf merger
-  merger = PdfFileMerger()
   outputName = stats.homeTeam + "_v_" + stats.awayTeam + "-" + stats.date.replace(".", "_") + ".pdf"
-
+  
   counter = 1
   numPlays = 0
-  page = SkoutPage(stats)
+  page = SkoutPage(stats, outputName)
   while(numPlays < len(stats.routesList)):
-    merger.append(BytesIO(page.makePage(counter)))
+    page.makePage(counter)
     numPlays = counter * page.rows * page.columns
     counter = counter + 1
 
-  merger.write(outputName)
-  merger.close()
+  page.savePDF()
   print("Wrote Skout to file \'{}\'".format(outputName))
 
 if __name__ == "__main__":
