@@ -25,9 +25,20 @@ from PlayStats import PlayStats
 from SkoutPage import SkoutPage
 from jsonschema import validate
 import jsonschema
-from io import BytesIO
-from reportlab.pdfgen import canvas
-# import pathlib
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from os import path
+
+def register_ubuntu_font():
+  """This function registers the ubuntu TTF font with reportlab, so it can be used in a PDF"""
+  # pyinstaller puts added files into the dir saved in sys._MEIPASS
+  # if we are not running from pyinstaller exe, use the current folder
+  bundleDir = getattr(sys, '_MEIPASS', path.abspath(path.dirname(__file__)))
+  fontPath = path.abspath(path.join(bundleDir, 'SkoutFonts')) + '/'
+  pdfmetrics.registerFont(TTFont('Ubuntu', fontPath + 'Ubuntu-Regular.ttf'))
+  pdfmetrics.registerFont(TTFont('Ubuntu-Bold', fontPath + 'Ubuntu-Bold.ttf'))
+  pdfmetrics.registerFont(TTFont('Ubuntu-Italic', fontPath + 'Ubuntu-Italic.ttf'))
+  pdfmetrics.registerFont(TTFont('Ubuntu-BoldItalic', fontPath + 'Ubuntu-BoldItalic.ttf'))
 
 def get_schema(path):
     """This function loads the given schema available"""
@@ -75,6 +86,9 @@ def main():
   args = parser.parse_args()
   print("Reading from: {}".format(args.inputFiles))
   print("Schema file: {}".format(args.schemaFile))
+
+  # register Ubuntu font used for the PDF
+  register_ubuntu_font()
 
   playList = PlayList()
   for fileName in args.inputFiles:

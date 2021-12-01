@@ -4,11 +4,8 @@
 
 #import drawSvg as draw
 from os import stat
-from reportlab.pdfgen import canvas, textobject
-from reportlab.graphics.widgets import markers
+from reportlab.pdfgen import canvas
 from reportlab.graphics.charts.textlabels import _text2Path
-from reportlab.graphics.widgets.signsandsymbols import ArrowOne
-# import Route
 import copy
 
 class SkoutPage:
@@ -16,12 +13,12 @@ class SkoutPage:
     drawingBorder = (474 / 2, 592 / 2)
     columns = 3
     rows = 5
-    font = 'Helvetica'
-    boldFont = 'Helvetica-Bold'
+    font = 'Ubuntu'
+    boldFont = 'Ubuntu-Bold'
 
     def __init__(self, playStats, outputName):
         self.stats = playStats
-        self.d = canvas.Canvas(filename=outputName, pagesize=self.drawingSize, bottomup=1)
+        self.d = canvas.Canvas(filename=outputName, pagesize=self.drawingSize, bottomup=1, initialFontName='Ubuntu')
         self.d.setTitle(self.stats.awayTeam + " at " + self.stats.homeTeam)
         self.d.setAuthor("Skout - Copyright (C) Xaver Klemenschits")
         self.d.setSubject("American Football Scout Report")
@@ -142,7 +139,7 @@ class SkoutPage:
 
     def drawPlay(self, x0, y0, x1, y1, index):
         # draw play Number
-        # self.d.setFont(self.boldFont, 30)
+        self.d.setFont(self.font, 30)
         self.d.setStrokeColor('black')
         self.d.setFillColor('black')
         self.d.drawString(x0, y1, '#' + str(index + 1))
@@ -216,31 +213,31 @@ class SkoutPage:
         downCountersText = ("1st:", "2nd:", "3rd:", "4th:", "PAT:")
 
         for i in range(len(downCountersText)):
-            # self.d.setFont(self.boldFont, statsTextSize)
+            self.d.setFont(self.boldFont, statsTextSize)
             self.d.drawString(statsBegin[0], statsTop - i * statsTextSize, downCountersText[i])
             if (index < numberOfPlays):
-                # self.d.setFont(self.font, statsTextSize)
+                self.d.setFont(self.font, statsTextSize)
                 self.d.drawString(downCountX, statsTop - i * statsTextSize, str(self.stats.downStats[index][i]))
 
         # 2nd stats column: total and strong sides
         column2X = downCountX + 80
         column2ValueX = column2X + 160
         #total
-        # self.d.setFont(self.boldFont, statsTextSize)
+        self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(column2X, statsTop, "Total:")
         if (index < numberOfPlays):
-            # self.d.setFont(self.font, statsTextSize)
+            self.d.setFont(self.font, statsTextSize)
             self.d.drawString(column2ValueX, statsTop, str(self.stats.occurences[index]))
 
         # strongsides and clipnumbers
-        # self.d.setFont(self.boldFont, statsTextSize)
+        self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(column2X, statsTop - statsTextSize, "SS left:")
         self.d.drawString(column2X, statsTop - 2 * statsTextSize, "SS right:")
 
         self.d.drawString(column2X, statsTop - 4 * statsTextSize, "vid#:")
 
         if (index < numberOfPlays):
-            # self.d.setFont(self.font, statsTextSize)
+            self.d.setFont(self.font, statsTextSize)
             self.d.drawString(column2ValueX, statsTop - statsTextSize, str(self.stats.strongSides[index][0]))
             self.d.drawString(column2ValueX, statsTop - 2 * statsTextSize, str(self.stats.strongSides[index][1]))
             self.d.drawString(column2X + 3 * statsTextSize, statsTop - 4 * statsTextSize, self.listAsComma(self.stats.clipNumbers[index]))
@@ -249,22 +246,22 @@ class SkoutPage:
         column3X = column2ValueX + 50
         column3ValueX = column3X + 70
         # distance
-        # self.d.setFont(self.boldFont, statsTextSize)
+        self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(column3X, statsTop, "Dist:")
         self.d.drawString(column3X, statsTop - statsTextSize, "Yds:")
         self.d.drawString(column3X, statsTop - 2 * statsTextSize, "Rec:")
         if (index < numberOfPlays):
-            # self.d.setFont(self.font, statsTextSize)
+            self.d.setFont(self.font, statsTextSize)
             self.d.drawString(column3ValueX, statsTop, self.listAsComma(self.stats.distances[index]))
             self.d.drawString(column3ValueX, statsTop - statsTextSize, self.listAsComma(self.stats.progressions[index]))
             self.d.drawString(column3ValueX, statsTop - 2 * statsTextSize, self.listAsComma(self.stats.intRecs[index]))
         
         # formations
         formationsY = statsBegin[1] + 2*statsBorder
-        # self.d.setFont(self.boldFont, statsTextSize)
+        self.d.setFont(self.boldFont, statsTextSize)
         self.d.drawString(statsBegin[0], formationsY, "Form.:")
         if (index < numberOfPlays):
-            # self.d.setFont(self.font, statsTextSize)
+            self.d.setFont(self.font, statsTextSize)
             self.d.drawString(statsBegin[0] + 3.5 * statsTextSize, formationsY, self.listAsComma(self.stats.formations[index]))        
 
         # draw the play itself
@@ -288,7 +285,7 @@ class SkoutPage:
 
         halfFontSize = self.getTextBounds('5', statsTextSize)[1] / 2.
         distanceMarkerPadding = 1.5 * statsTextSize
-        # self.d.setFont(self.font, statsTextSize)
+        self.d.setFont(self.font, statsTextSize)
         self.d.setFillColor('gray')
         self.d.drawRightString(topCorner[0] + distanceMarkerPadding, lowCorner[1] + fiveYards - halfFontSize, '5')
         self.d.drawRightString(topCorner[0] + distanceMarkerPadding, lowCorner[1] + tenYards - halfFontSize, '10')
