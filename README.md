@@ -2,8 +2,10 @@
 
 ## Using the packaged windows version with VSCode
 
+- Install [VS Code](https://code.visualstudio.com/)
+- Download the latest release of Skout from the [Releases Page](https://github.com/XaverKlemenschits/Skout/releases) choosing the correct .zip file for your operating system (for example `Skout_Windows-vx.x.x.zip`)
 - Unpack the .zip file containing the `Skout.exe` and `skout.schema.json` into a folder.
-- Now install [VS Code](https://code.visualstudio.com/) and open this folder with VSCode.
+- Open this folder in VSCode by clicking on "File" -> "Open Folder..."
 
 Code-highlighting und auto-completion should work in VSCode when you open a file ending in `.skout.json`, like the supplied `example.skout.json` file.
 
