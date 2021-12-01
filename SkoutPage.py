@@ -22,6 +22,9 @@ class SkoutPage:
     def __init__(self, playStats, outputName):
         self.stats = playStats
         self.d = canvas.Canvas(filename=outputName, pagesize=self.drawingSize, bottomup=1)
+        self.d.setTitle(self.stats.awayTeam + " at " + self.stats.homeTeam)
+        self.d.setAuthor("Skout - Copyright (C) Xaver Klemenschits")
+        self.d.setSubject("American Football Scout Report")
 
     def listAsComma(self, listData):
         if(len(listData) == 0):

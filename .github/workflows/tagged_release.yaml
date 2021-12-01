@@ -46,7 +46,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build with pyinstaller
         run: |
-          pyinstaller --onefile Skout.spec
+          pyinstaller --icon=Icon/skout.ico --onefile Skout.spec
 
       - name: Compress
         shell: bash
