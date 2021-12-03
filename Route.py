@@ -29,8 +29,7 @@ class Route:
                   "Screen",         # 20
                   ]
     # coordinates for the lines describing the routes
-    routeCoords = [[[0, 6],
-                   [-1, 5]],
+    routeCoords = [[[0, 6], [-1, 5]],
                    [[4, 1]],
                    [[-4, 3]],
                    [[0, 12], [1, 10]],
