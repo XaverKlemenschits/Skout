@@ -43,7 +43,7 @@ class PlayStats:
         self.progressions = []
         self.intRecs = []
         self.distances = []
-        
+
         # Calculate stats from the passed playList
 
         # just push 1st element
@@ -51,12 +51,12 @@ class PlayStats:
         if(playList.sides[0] == "left"):
             self.switchStrongSide(self.routesList[-1])
         self.occurences.append(1)
-        downList = [0,0,0,0,0]
+        downList = [0, 0, 0, 0, 0]
         downList[playList.downs[0]-1] = 1
         self.downStats.append(downList)
         self.formations.append([])
         self.formations[-1].append(playList.formations[0])
-        strongside = [0,0]
+        strongside = [0, 0]
         self.incrementStrongSide(strongside, playList.sides[0])
         self.strongSides.append(strongside)
         self.clipNumbers.append([])
@@ -79,7 +79,8 @@ class PlayStats:
                 self.occurences[last] += 1
                 self.downStats[last][playList.downs[i]-1] += 1
                 self.formations[last].append(playList.formations[i])
-                self.incrementStrongSide(self.strongSides[last], playList.sides[i])
+                self.incrementStrongSide(
+                    self.strongSides[last], playList.sides[i])
                 self.clipNumbers[last].append(playList.clipNumbers[i])
                 self.progressions[last].append(playList.progression[i])
                 self.intRecs[last].append(playList.intRec[i])
@@ -89,12 +90,12 @@ class PlayStats:
             else:
                 self.routesList.append(currentRoute)
                 self.occurences.append(1)
-                downList = [0,0,0,0,0]
+                downList = [0, 0, 0, 0, 0]
                 downList[playList.downs[i]-1] = 1
                 self.downStats.append(downList)
                 self.formations.append([])
                 self.formations[-1].append(playList.formations[i])
-                strongside = [0,0]
+                strongside = [0, 0]
                 self.incrementStrongSide(strongside, playList.sides[i])
                 self.strongSides.append(strongside)
                 self.clipNumbers.append([])

@@ -4,6 +4,7 @@
 
 from Route import Route, RouteList
 
+
 class PlayList:
     def __init__(self):
         self.routes = []
@@ -27,7 +28,6 @@ class PlayList:
         self.awayScore = away
 
     def addPlays(self, dict):
-        
         for play in dict:
             routes = []
             for i in range(4):
@@ -44,7 +44,8 @@ class PlayList:
 
     def printAllPlays(self):
         for i in range(len(self.routes)):
-            print("Routes: {}, formation: {}, down: {}, strongside: {}".format(self.routes[i], self.formations[i], self.downs[i], self.sides[i]))
+            print("Routes: {}, formation: {}, down: {}, strongside: {}".format(
+                self.routes[i], self.formations[i], self.downs[i], self.sides[i]))
 
     def swapEntry(self, i, j, swappable):
         swappable[i], swappable[j] = swappable[j], swappable[i]
@@ -68,4 +69,3 @@ class PlayList:
             for j in range(n-i-1):
                 if(self.routes[j] < self.routes[j+1]):
                     self.swapEntries(j, j+1)
-                    

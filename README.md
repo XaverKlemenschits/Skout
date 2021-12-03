@@ -124,7 +124,10 @@ For all available options, look at `skout.schema.json`.
 
 ## Contributing
 
-Have a look at `TODO.md` for a list of missing features if you want to contribute. Bug reports, pull requests and feature requests should be filed on GitHub.
+Before a pull request can be merged, make sure all files have been formatted using `autopep8`.
+The file `format_project.sh` does this automatically.
+
+Bug reports, pull requests and feature requests should be filed on GitHub.
 
 ## License
 
