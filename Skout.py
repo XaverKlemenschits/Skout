@@ -119,7 +119,8 @@ def main():
                         dest='schemaFile', default=['skout.schema.json'])
     parser.add_argument('-o', metavar='TeamA_v_TeamB.pdf', nargs=1,
                         help='Name of the PDF output file', dest='outputName')
-    parser.add_argument('-p', '--parents', action='store_true')
+    parser.add_argument('-p', '--parents', action='store_true',
+                        help='Create folders for output file if they do not exist')
 
     args = parser.parse_args()
     print("Reading from: {}".format(args.inputFiles))

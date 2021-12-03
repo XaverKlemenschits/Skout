@@ -1,23 +1,34 @@
 # Skout - Flagfootball Scouting Analysis Tool
 
-## Using the packaged windows version with VSCode
+## Setting up the packaged windows version with VSCode
 
 - Install [VS Code](https://code.visualstudio.com/)
 - Download the latest release of Skout from the [Releases Page](https://github.com/XaverKlemenschits/Skout/releases) choosing the correct .zip file for your operating system (for example `Skout_Windows-vx.x.x.zip`)
-- Unpack the .zip file containing the `Skout.exe` and `skout.schema.json` into a folder.
-- Open this folder in VSCode by clicking on "File" -> "Open Folder..."
-- Code-highlighting und auto-completion in VSCode must be enabled. See the section below for details.
+- Unpack the .zip file containing the `Skout.exe` and `skout.schema.json` into a folder on your computer.
+- Open VSCode.
+- Inside VSCode click on "File" -> "Open Folder..." and choose the folder you unpacked above.
+- On the left side of VSCode you should now see the files contained in this folder. You can open a file by clicking on its name.
+- VSCode can automatically list and fill entries, such as formations, strong sides, routes, etc...
+  If you want this functionality (recommended), see the section `Code Highlighting and Auto Completion in VSCode` below.
+
+## Using the packaged windows version with VSCode
 
 In order to generate your scout file:
+- Open VSCode and click on "File" -> "Open Folder..." and open the folder containing `Skout.exe`
 - Click on the menu item `Terminal` and then `New Terminal` in VSCode.
-- In the terminal, type `Skout.exe example.skout.json` to generate a single `.pdf` file for the example scout.
+- A terminal panel was now opened in VSCode.
+- In the terminal, type `.\Skout.exe example.skout.json` to generate a single `.pdf` file for the example scout.
+- If you are unsure about the use of the program, type the following into the terminal: `.\Skout.exe --help`
 
 **Nota Bene**: If windows stops the execution with a security warning, you can still execute it by clicking on "More info" and then "Run Anyway".
+
+The `Skout.exe` offers a few options to specify e.g. the output filename.
+In order to list available options, type `.\Skout.exe --help`
 
 ## Code Highlighting and Auto Completion in VSCode
 
 - Press `Ctrl`+`Shift`+`P`. This will open a line at the top of the VSCode window.
-- In this line, type "Open Settings" and choose "Preferences: Open Settings (JSON)" from the list of available options.
+- In this line, type "Open Settings" and, from the dropdown menu, choose "Preferences: Open Settings (JSON)".
 - This will open a new file, which starts with a `{` in the first line.
 - After this first `{`, insert the following text:
 ```json
