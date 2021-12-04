@@ -7,6 +7,7 @@ from os import stat
 from reportlab.pdfgen import canvas
 from reportlab.graphics.charts.textlabels import _text2Path
 import copy
+from collections import Counter
 
 
 class SkoutPage:
@@ -35,6 +36,22 @@ class SkoutPage:
                     result = result + ","
                 result = result + str(listData[i])
         return result
+
+    def listAsCount(self, listData):
+        if(len(listData) == 0):
+            return ""
+        # remove empty elems from list str_list = list(filter(None, str_list))
+        # generate count of appearance in list
+        listData = Counter(listData)
+        result = []
+        for elem in listData:
+            result.append(str(listData[elem]) + "x")
+            if elem == "":
+                result[-1] += "Spread"
+            else:
+                result[-1] += str(elem)
+
+        return self.listAsComma(result)
 
     def getTextBounds(self, text, size, font=None):
         '''
@@ -283,7 +300,7 @@ class SkoutPage:
         if (index < numberOfPlays):
             self.d.setFont(self.font, statsTextSize)
             self.d.drawString(statsBegin[0] + 3.5 * statsTextSize,
-                              formationsY, self.listAsComma(self.stats.formations[index]))
+                              formationsY, self.listAsCount(self.stats.formations[index]))
 
         # draw the play itself
         playBorder = 60
