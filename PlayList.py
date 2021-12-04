@@ -61,6 +61,7 @@ class PlayList:
         self.swapEntry(i, j, self.progression)
         self.swapEntry(i, j, self.intRec)
         self.swapEntry(i, j, self.distance)
+        self.swapEntry(i, j, self.notes)
 
     def sort(self):
         n = len(self.routes)

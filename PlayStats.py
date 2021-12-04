@@ -27,6 +27,7 @@ class PlayStats:
         self.swapEntry(i, j, self.progressions)
         self.swapEntry(i, j, self.intRecs)
         self.swapEntry(i, j, self.distances)
+        self.swapEntry(i, j, self.notes)
 
     def __init__(self, playList):
         self.homeTeam = playList.homeTeam

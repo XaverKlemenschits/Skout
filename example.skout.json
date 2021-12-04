@@ -20,7 +20,8 @@
             "formation": "A tight",
             "down": 2,
             "clipnumber": 1,
-            "strongside": "left"
+            "strongside": "left",
+            "notes": "2nd of game"
         }, {
             "routes": ["Post", "5 Out", "Quick Out", "5 Out"],
             "formation": "A tight",
