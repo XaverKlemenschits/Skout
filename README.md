@@ -1,23 +1,34 @@
 # Skout - Flagfootball Scouting Analysis Tool
 
-## Using the packaged windows version with VSCode
+## Setting up the packaged windows version with VSCode
 
 - Install [VS Code](https://code.visualstudio.com/)
 - Download the latest release of Skout from the [Releases Page](https://github.com/XaverKlemenschits/Skout/releases) choosing the correct .zip file for your operating system (for example `Skout_Windows-vx.x.x.zip`)
-- Unpack the .zip file containing the `Skout.exe` and `skout.schema.json` into a folder.
-- Open this folder in VSCode by clicking on "File" -> "Open Folder..."
-- Code-highlighting und auto-completion in VSCode must be enabled. See the section below for details.
+- Unpack the .zip file containing the `Skout.exe` and `skout.schema.json` into a folder on your computer.
+- Open VSCode.
+- Inside VSCode click on "File" -> "Open Folder..." and choose the folder you unpacked above.
+- On the left side of VSCode you should now see the files contained in this folder. You can open a file by clicking on its name.
+- VSCode can automatically list and fill entries, such as formations, strong sides, routes, etc...
+  If you want this functionality (recommended), see the section `Code Highlighting and Auto Completion in VSCode` below.
+
+## Using the packaged windows version with VSCode
 
 In order to generate your scout file:
+- Open VSCode and click on "File" -> "Open Folder..." and open the folder containing `Skout.exe`
 - Click on the menu item `Terminal` and then `New Terminal` in VSCode.
-- In the terminal, type `Skout.exe example.skout.json` to generate a single `.pdf` file for the example scout.
+- A terminal panel was now opened in VSCode.
+- In the terminal, type `.\Skout.exe example.skout.json` to generate a single `.pdf` file for the example scout.
+- If you are unsure about the use of the program, type the following into the terminal: `.\Skout.exe --help`
 
 **Nota Bene**: If windows stops the execution with a security warning, you can still execute it by clicking on "More info" and then "Run Anyway".
+
+The `Skout.exe` offers a few options to specify e.g. the output filename.
+In order to list available options, type `.\Skout.exe --help`
 
 ## Code Highlighting and Auto Completion in VSCode
 
 - Press `Ctrl`+`Shift`+`P`. This will open a line at the top of the VSCode window.
-- In this line, type "Open Settings" and choose "Preferences: Open Settings (JSON)" from the list of available options.
+- In this line, type "Open Settings" and, from the dropdown menu, choose "Preferences: Open Settings (JSON)".
 - This will open a new file, which starts with a `{` in the first line.
 - After this first `{`, insert the following text:
 ```json
@@ -45,35 +56,41 @@ You have to specify a strongside for each play, if none is given, **strong right
 ### Route numbers
 
 **The numbering of receivers depends on the strongside**: The receivers are always listed from left to right looking into the direction of progression.
-Therefore, the order the routes should be given in changes depending on the strong side:
-- strong right: ACBD
-- strong left:  ABCD
-- trips right:  CABD
-- trips left:   ABDC
+Therefore, the order of the routes changes depending on the strong side and formation:
+| Formation | Order |
+| -- | -- |
+| strong right | ACBD |
+| strong left  | ABCD |
+| trips right  | CABD |
+| trips left   | ABDC |
 
-When specifying the routes, you have to use numbers since route names are not recognized. The numbers for the specific routes are listed below.
+When specifying the routes, you can use the route name or their corresponding IDs.
+We recommend using the route names in combination with an editor capable of auto completion, as described above.
+Currently the following routes are supported:
 
-- 0 "Stop",
-- 1 "Quick Out",
-- 2 "Slant",
-- 3 "Comeback Out",
-- 4 "Comeback In",
-- 5 "10 Out",
-- 6 "10 In",
-- 7 "Corner",
-- 8 "Post",
-- 9 "Go",
-- 10 "5 In",
-- 11 "5 Out",
-- 12 "Pivot",
-- 13 "Post-Corner",
-- 14 "Reverse",
-- 15 "Quick In",
-- 16 "Yoyo",
-- 17 "Stop&Go"
-- 18 "Out&Up"
-- 19 "Post Comeback"
-- 20 "Screen"
+| Route ID | Route Name |
+| -- | -- |
+| 0 | "Stop", |
+| 1 | "Quick Out", |
+| 2 | "Slant", |
+| 3 | "Comeback Out", |
+| 4 | "Comeback In", |
+| 5 | "10 Out", |
+| 6 | "10 In", |
+| 7 | "Corner", |
+| 8 | "Post", |
+| 9 | "Go", |
+| 10|  "5 In", |
+| 11|  "5 Out", |
+| 12|  "Pivot", |
+| 13|  "Post-Corner", |
+| 14|  "Reverse", |
+| 15|  "Quick In", |
+| 16|  "Yoyo", |
+| 17|  "Stop&Go" |
+| 18|  "Out&Up" |
+| 19|  "Post Comeback" |
+| 20|  "Screen" |
 
 ## Using the packaged Windows version without VSCode
 
@@ -124,7 +141,10 @@ For all available options, look at `skout.schema.json`.
 
 ## Contributing
 
-Have a look at `TODO.md` for a list of missing features if you want to contribute. Bug reports, pull requests and feature requests should be filed on GitHub.
+Before a pull request can be merged, make sure all files have been formatted using `autopep8`.
+The file `format_project.sh` does this automatically.
+
+Bug reports, pull requests and feature requests should be filed on GitHub.
 
 ## License
 

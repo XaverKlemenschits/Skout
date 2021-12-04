@@ -1,93 +1,179 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Skout",
-    "description": "FlagFootball scout plays and relevant information",
-    "type": "object",
-    "properties": {
-      "team": {
-        "description": "The name of the scouted team.",
-        "type": "string"
-      },
-      "opponent": {
-        "description": "The name of the team the scouted team was playing against.",
-        "type": "string"
-      },
-      "date": {
-        "description": "The date the game was played.",
-        "type": "string"
-      },
-      "score": {
-        "description": "The final score of the game.",
-        "type": "array",
-        "items": {
-          "description": "Scouted team score first, then opponent score.",
-          "type": "integer"
-        }
-      },
-      "plays": {
-        "description": "Array of all the plays.",
-        "type": "array",
-        "items": {
-          "description": "Object storing information about the play.",
-          "type": "object",
-          "properties": {
-            "routes": {
-              "description": "The routes the players were running in the receiver order ACBD.",
-              "type": "array",
-              "items": {
-                "description": "The route of a receiver.",
-                "type": "integer"
-              },
-              "default": [0, 0, 0, 0]
-            },
-            "formation": {
-              "description": "The alignment/formation of the receivers. Empty means spread. A is always the weak side WR and D the strong side WR.",
-              "type": "string",
-              "default": "Spread",
-              "enum": ["","Spread", "A tight", "B tight", "B wide", "D tight", "A Semi", "Tight", "Bunch", "Trips", "Trips Bunch", "BD Stack", "Trips A tight BD Stack", "B tight Semi"]
-            },
-            "down": {
-              "description": "The down the play was run in. 5 corresponds to PAT.",
-              "type": "integer",
-              "default": 1
-            },
-            "distance": {
-              "description": "The distance to the 1st down or goal line.",
-              "type": "integer",
-              "default": 20 
-            },
-            "strongside": {
-              "description": "The side where more receivers aligned.",
-              "type": "string",
-              "default": "right"
-            },
-            "clipnumber": {
-              "description": "Number of the video clip the play was scouted from.",
-              "type": "integer",
-              "default": 0
-            },
-            "intendedReceiver": {
-              "description": "The receiver the ball was thrown to.",
-              "type": "string",
-              "enum": ["a", "A", "b", "B", "c", "C", "d", "D", "q", "Q"]
-            },
-            "yardsAtCatch": {
-              "description": "The number of yards after which the throw was caught",
-              "type": "integer"
-            },
-
-            "yardsTotal": {
-              "description": "The progression with this play in yards.",
-              "type": "integer"
-            },
-            "notes": {
-              "description": "Any other notes about this play like motions, special snap counts, etc.",
-              "type": "string"
-            }
-          },
-          "required": ["routes", "formation", "down", "strongside"]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skout",
+  "description": "FlagFootball scout plays and relevant information",
+  "type": "object",
+  "properties": {
+    "team": {
+      "description": "The name of the scouted team.",
+      "type": "string"
+    },
+    "opponent": {
+      "description": "The name of the team the scouted team was playing against.",
+      "type": "string"
+    },
+    "date": {
+      "description": "The date the game was played.",
+      "type": "string"
+    },
+    "score": {
+      "description": "The final score of the game.",
+      "type": "array",
+      "items": {
+        "description": "Scouted team score first, then opponent score.",
+        "type": "integer"
       }
     },
-    "required": [ "team", "date", "plays" ]
-  }
+    "plays": {
+      "description": "Array of all the plays.",
+      "type": "array",
+      "items": {
+        "description": "Object storing information about the play.",
+        "type": "object",
+        "properties": {
+          "routes": {
+            "description": "The routes the players were running from left to right.",
+            "type": "array",
+            "items": {
+              "description": "The route of a receiver.",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "enum": [
+                "Stop",
+                "Quick Out",
+                "Slant",
+                "Comeback Out",
+                "Comeback In",
+                "10 Out",
+                "10 In",
+                "Corner",
+                "Post",
+                "Go",
+                "5 In",
+                "5 Out",
+                "Pivot",
+                "Post-Corner",
+                "Reverse",
+                "Quick In",
+                "Yoyo",
+                "Stop&Go",
+                "Out&Up",
+                "Post Comeback",
+                "Screen",
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20
+              ]
+            },
+            "default": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "formation": {
+            "description": "The alignment/formation of the receivers. Empty means spread. A is always the weak side WR and D the strong side WR.",
+            "type": "string",
+            "default": "Spread",
+            "enum": [
+              "",
+              "Spread",
+              "A tight",
+              "B tight",
+              "B wide",
+              "D tight",
+              "A Semi",
+              "Tight",
+              "Bunch",
+              "Trips",
+              "Trips Bunch",
+              "BD Stack",
+              "Trips A tight BD Stack",
+              "B tight Semi"
+            ]
+          },
+          "down": {
+            "description": "The down the play was run in. 5 corresponds to PAT.",
+            "type": "integer",
+            "default": 1
+          },
+          "distance": {
+            "description": "The distance to the 1st down or goal line.",
+            "type": "integer",
+            "default": 20
+          },
+          "strongside": {
+            "description": "The side where more receivers aligned.",
+            "type": "string",
+            "default": "right"
+          },
+          "clipnumber": {
+            "description": "Number of the video clip the play was scouted from.",
+            "type": "integer",
+            "default": 0
+          },
+          "intendedReceiver": {
+            "description": "The receiver the ball was thrown to.",
+            "type": "string",
+            "enum": [
+              "a",
+              "A",
+              "b",
+              "B",
+              "c",
+              "C",
+              "d",
+              "D",
+              "q",
+              "Q"
+            ]
+          },
+          "yardsAtCatch": {
+            "description": "The number of yards after which the throw was caught",
+            "type": "integer"
+          },
+          "yardsTotal": {
+            "description": "The progression with this play in yards.",
+            "type": "integer"
+          },
+          "notes": {
+            "description": "Any other notes about this play like motions, special snap counts, etc.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "routes",
+          "formation",
+          "down",
+          "strongside"
+        ]
+      }
+    }
+  },
+  "required": [
+    "team",
+    "date",
+    "plays"
+  ]
+}

@@ -27,6 +27,7 @@ class PlayStats:
         self.swapEntry(i, j, self.progressions)
         self.swapEntry(i, j, self.intRecs)
         self.swapEntry(i, j, self.distances)
+        self.swapEntry(i, j, self.notes)
 
     def __init__(self, playList):
         self.homeTeam = playList.homeTeam
@@ -43,7 +44,8 @@ class PlayStats:
         self.progressions = []
         self.intRecs = []
         self.distances = []
-        
+        self.notes = []
+
         # Calculate stats from the passed playList
 
         # just push 1st element
@@ -51,12 +53,12 @@ class PlayStats:
         if(playList.sides[0] == "left"):
             self.switchStrongSide(self.routesList[-1])
         self.occurences.append(1)
-        downList = [0,0,0,0,0]
+        downList = [0, 0, 0, 0, 0]
         downList[playList.downs[0]-1] = 1
         self.downStats.append(downList)
         self.formations.append([])
         self.formations[-1].append(playList.formations[0])
-        strongside = [0,0]
+        strongside = [0, 0]
         self.incrementStrongSide(strongside, playList.sides[0])
         self.strongSides.append(strongside)
         self.clipNumbers.append([])
@@ -67,6 +69,8 @@ class PlayStats:
         self.intRecs[-1].append(playList.intRec[0])
         self.distances.append([])
         self.distances[-1].append(playList.distance[0])
+        self.notes.append([])
+        self.notes[-1].append(playList.notes[0])
 
         last = 0
         for i in range(1, len(playList.routes)):
@@ -79,22 +83,24 @@ class PlayStats:
                 self.occurences[last] += 1
                 self.downStats[last][playList.downs[i]-1] += 1
                 self.formations[last].append(playList.formations[i])
-                self.incrementStrongSide(self.strongSides[last], playList.sides[i])
+                self.incrementStrongSide(
+                    self.strongSides[last], playList.sides[i])
                 self.clipNumbers[last].append(playList.clipNumbers[i])
                 self.progressions[last].append(playList.progression[i])
                 self.intRecs[last].append(playList.intRec[i])
                 self.distances[last].append(playList.distance[i])
+                self.notes[last].append(playList.notes[i])
 
             # routes are not equal, add new play to list
             else:
                 self.routesList.append(currentRoute)
                 self.occurences.append(1)
-                downList = [0,0,0,0,0]
+                downList = [0, 0, 0, 0, 0]
                 downList[playList.downs[i]-1] = 1
                 self.downStats.append(downList)
                 self.formations.append([])
                 self.formations[-1].append(playList.formations[i])
-                strongside = [0,0]
+                strongside = [0, 0]
                 self.incrementStrongSide(strongside, playList.sides[i])
                 self.strongSides.append(strongside)
                 self.clipNumbers.append([])
@@ -105,6 +111,8 @@ class PlayStats:
                 self.intRecs[-1].append(playList.intRec[i])
                 self.distances.append([])
                 self.distances[-1].append(playList.distance[i])
+                self.notes.append([])
+                self.notes[-1].append(playList.notes[i])
                 last += 1
 
         # bubble sort results after number of occurences

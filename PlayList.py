@@ -4,6 +4,7 @@
 
 from Route import Route, RouteList
 
+
 class PlayList:
     def __init__(self):
         self.routes = []
@@ -14,6 +15,7 @@ class PlayList:
         self.progression = []
         self.intRec = []
         self.distance = []
+        self.notes = []
 
     def setTeamNames(self, home, away):
         self.homeTeam = home
@@ -27,7 +29,6 @@ class PlayList:
         self.awayScore = away
 
     def addPlays(self, dict):
-        
         for play in dict:
             routes = []
             for i in range(4):
@@ -41,10 +42,12 @@ class PlayList:
             self.progression.append(play.get('yardsTotal', ''))
             self.intRec.append(play.get('intendedReceiver', '').upper())
             self.distance.append(play.get('distance', ''))
+            self.notes.append(play.get('notes', ''))
 
     def printAllPlays(self):
         for i in range(len(self.routes)):
-            print("Routes: {}, formation: {}, down: {}, strongside: {}".format(self.routes[i], self.formations[i], self.downs[i], self.sides[i]))
+            print("Routes: {}, formation: {}, down: {}, strongside: {}".format(
+                self.routes[i], self.formations[i], self.downs[i], self.sides[i]))
 
     def swapEntry(self, i, j, swappable):
         swappable[i], swappable[j] = swappable[j], swappable[i]
@@ -58,6 +61,7 @@ class PlayList:
         self.swapEntry(i, j, self.progression)
         self.swapEntry(i, j, self.intRec)
         self.swapEntry(i, j, self.distance)
+        self.swapEntry(i, j, self.notes)
 
     def sort(self):
         n = len(self.routes)
@@ -68,4 +72,3 @@ class PlayList:
             for j in range(n-i-1):
                 if(self.routes[j] < self.routes[j+1]):
                     self.swapEntries(j, j+1)
-                    

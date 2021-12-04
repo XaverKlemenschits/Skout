@@ -5,7 +5,7 @@
     "score": [11, 22],
     "plays": [
         {
-            "routes": [8, 11, 1, 11],
+            "routes": ["Post", "5 Out", "Quick Out", "5 Out"],
             "formation": "A tight",
             "down": 1,
             "distance": 20,
@@ -16,80 +16,81 @@
             "yardsTotal": 0,
             "notes": "1st of game"
         }, {
-            "routes": [8, 11, 1, 11],
-            "formation": "A tight",
+            "routes": ["Post", "5 Out", "Quick Out", "5 Out"],
+            "formation": "",
             "down": 2,
             "clipnumber": 1,
-            "strongside": "left"
+            "strongside": "left",
+            "notes": "2nd of game"
         }, {
-            "routes": [8, 11, 1, 11],
+            "routes": ["Post", "5 Out", "Quick Out", "5 Out"],
             "formation": "A tight",
             "down": 1,
             "clipnumber": 14,
             "strongside": "left"
         }, {
-            "routes": [11, 8, 1, 10],
+            "routes": ["5 Out", "Post", "Quick Out", "5 In"],
             "formation": "A tight",
             "down": 2,
             "strongside": "left"
         }, {
-            "routes": [0, 0, 0, 0],
+            "routes": ["Stop", "Stop", "Stop", "Stop"],
             "formation": "",
             "down": 1,
             "strongside": "left"
         },
         {
-            "routes": [0, 0, 0, 0],
+            "routes": ["Stop", "Stop", "Stop", "Stop"],
             "formation": "",
             "down": 1,
             "strongside": "left"
         }, {
-            "routes": [0, 0, 0, 0],
+            "routes": ["Stop", "Stop", "Stop", "Stop"],
             "formation": "",
             "down": 2,
             "strongside": "left"
         }, {
-            "routes": [0, 0, 0, 0],
+            "routes": ["Stop", "Stop", "Stop", "Stop"],
             "formation": "",
             "down": 3,
             "strongside": "left"
         }, {
-            "routes": [0, 0, 0, 0],
+            "routes": ["Stop", "Stop", "Stop", "Stop"],
             "formation": "",
             "down": 3,
             "strongside": "left"
         }, {
-            "routes": [0, 0, 0, 0],
+            "routes": ["Stop", "Stop", "Stop", "Stop"],
             "formation": "",
             "down": 4,
             "strongside": "left"
         }, {
-            "routes": [9, 8, 11, 10],
+            "routes": ["Go", "Post", "5 Out", "5 In"],
             "formation": "B tight",
             "down": 1,
             "strongside": "left"
         }, {
-            "routes": [6, 1, 1, 10],
+            "routes": ["10 In", "Quick Out", "Quick Out", "5 In"],
             "formation": "",
             "down": 2,
             "strongside": "left"
         }, {
-            "routes": [6, 8, 2, 12],
+            "routes": ["10 In", "Post", "Slant", "Pivot"],
             "formation": "",
             "down": 3,
             "strongside": "right"
         }, {
-            "routes": [0, 2, 10, 6],
+            "routes": ["Stop", "Slant", "5 In", "10 In"],
             "formation": "",
             "down": 4,
             "strongside": "left"
         }, {
-            "routes": [9, 1, 2, 2],
+            "routes": ["Go", "Quick Out", "Slant", "Slant"],
             "formation": "",
             "down": 1,
             "strongside": "right"
         }, {
-            "routes": [0, 12, 1, 8],
+            "routes": ["Stop", "Pivot", "Quick Out", "Post"],
             "formation": "B tight",
             "down": 2,
             "strongside": "right"
