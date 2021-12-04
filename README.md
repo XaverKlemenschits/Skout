@@ -56,35 +56,41 @@ You have to specify a strongside for each play, if none is given, **strong right
 ### Route numbers
 
 **The numbering of receivers depends on the strongside**: The receivers are always listed from left to right looking into the direction of progression.
-Therefore, the order the routes should be given in changes depending on the strong side:
-- strong right: ACBD
-- strong left:  ABCD
-- trips right:  CABD
-- trips left:   ABDC
+Therefore, the order of the routes changes depending on the strong side and formation:
+| Formation | Order |
+| -- | -- |
+| strong right | ACBD |
+| strong left  | ABCD |
+| trips right  | CABD |
+| trips left   | ABDC |
 
-When specifying the routes, you have to use numbers since route names are not recognized. The numbers for the specific routes are listed below.
+When specifying the routes, you can use the route name or their corresponding IDs.
+We recommend using the route names in combination with an editor capable of auto completion, as described above.
+Currently the following routes are supported:
 
-- 0 "Stop",
-- 1 "Quick Out",
-- 2 "Slant",
-- 3 "Comeback Out",
-- 4 "Comeback In",
-- 5 "10 Out",
-- 6 "10 In",
-- 7 "Corner",
-- 8 "Post",
-- 9 "Go",
-- 10 "5 In",
-- 11 "5 Out",
-- 12 "Pivot",
-- 13 "Post-Corner",
-- 14 "Reverse",
-- 15 "Quick In",
-- 16 "Yoyo",
-- 17 "Stop&Go"
-- 18 "Out&Up"
-- 19 "Post Comeback"
-- 20 "Screen"
+| Route ID | Route Name |
+| -- | -- |
+| 0 | "Stop", |
+| 1 | "Quick Out", |
+| 2 | "Slant", |
+| 3 | "Comeback Out", |
+| 4 | "Comeback In", |
+| 5 | "10 Out", |
+| 6 | "10 In", |
+| 7 | "Corner", |
+| 8 | "Post", |
+| 9 | "Go", |
+| 10|  "5 In", |
+| 11|  "5 Out", |
+| 12|  "Pivot", |
+| 13|  "Post-Corner", |
+| 14|  "Reverse", |
+| 15|  "Quick In", |
+| 16|  "Yoyo", |
+| 17|  "Stop&Go" |
+| 18|  "Out&Up" |
+| 19|  "Post Comeback" |
+| 20|  "Screen" |
 
 ## Using the packaged Windows version without VSCode
 
