@@ -145,10 +145,13 @@ class SkoutPage:
 
     def drawPlay(self, x0, y0, x1, y1, index):
         # draw play Number
-        self.d.setFont(self.font, 30)
+        playNumberSize = 30
+        self.d.setFont(self.boldFont, playNumberSize)
         self.d.setStrokeColor('black')
         self.d.setFillColor('black')
         self.d.drawString(x0, y1, '#' + str(index + 1))
+        self.d.setFont(self.font, playNumberSize)
+        self.d.drawString(x0 + (len(str(index + 1)) + 0.5) * playNumberSize, y1, self.listAsComma(self.stats.notes[index]))
 
         yard2Pixels = abs(y0 - y1) / 15.  # the whole field are 15 yards
         # routes are not allowed to extend further than 4 yds laterally

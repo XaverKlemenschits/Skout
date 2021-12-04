@@ -89,7 +89,7 @@
             "down": 1,
             "strongside": "right"
         }, {
-            "routes": [0, 12, 1, 8],
+            "routes": ["Stop", "Pivot", "Quick Out", "Post"],
             "formation": "B tight",
             "down": 2,
             "strongside": "right"

@@ -15,6 +15,7 @@ class PlayList:
         self.progression = []
         self.intRec = []
         self.distance = []
+        self.notes = []
 
     def setTeamNames(self, home, away):
         self.homeTeam = home
@@ -41,6 +42,7 @@ class PlayList:
             self.progression.append(play.get('yardsTotal', ''))
             self.intRec.append(play.get('intendedReceiver', '').upper())
             self.distance.append(play.get('distance', ''))
+            self.notes.append(play.get('notes', ''))
 
     def printAllPlays(self):
         for i in range(len(self.routes)):

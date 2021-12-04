@@ -43,6 +43,7 @@ class PlayStats:
         self.progressions = []
         self.intRecs = []
         self.distances = []
+        self.notes = []
 
         # Calculate stats from the passed playList
 
@@ -67,6 +68,8 @@ class PlayStats:
         self.intRecs[-1].append(playList.intRec[0])
         self.distances.append([])
         self.distances[-1].append(playList.distance[0])
+        self.notes.append([])
+        self.notes[-1].append(playList.notes[0])
 
         last = 0
         for i in range(1, len(playList.routes)):
@@ -85,6 +88,7 @@ class PlayStats:
                 self.progressions[last].append(playList.progression[i])
                 self.intRecs[last].append(playList.intRec[i])
                 self.distances[last].append(playList.distance[i])
+                self.notes[last].append(playList.notes[i])
 
             # routes are not equal, add new play to list
             else:
@@ -106,6 +110,8 @@ class PlayStats:
                 self.intRecs[-1].append(playList.intRec[i])
                 self.distances.append([])
                 self.distances[-1].append(playList.distance[i])
+                self.notes.append([])
+                self.notes[-1].append(playList.notes[i])
                 last += 1
 
         # bubble sort results after number of occurences
