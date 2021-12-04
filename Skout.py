@@ -95,11 +95,11 @@ def doesFolderExist(name, createIfNoExist):
 
 
 def isUnix():
-    return getOS() is not "Windows"
+    return getOS() != "Windows"
 
 
 def isWindows():
-    return getOS() is "Windows"
+    return getOS() == "Windows"
 
 
 def getPathSeparator():
@@ -149,7 +149,7 @@ def main():
     # first set default name
     outputName = stats.homeTeam + "_v_" + stats.awayTeam + \
         "-" + stats.date.replace(".", "_") + ".pdf"
-    if(args.outputName is not None):
+    if(args.outputName != None):
         if(args.outputName[0][-4:] == ".pdf"):
             outputName = args.outputName[0]
         elif(args.outputName[0][-1] == '/' or args.outputName[0][-1] == '\\'):
@@ -158,8 +158,8 @@ def main():
             sys.exit("ERROR: Invalid output filename! Must either be a PDF filename (\"name.pdf\")"
                      " or a directory (\"name" + getPathSeparator() + "\").")
 
-    # check if folder exists and create it if it should be
-    doesFolderExist(path.dirname(outputName), args.parents)
+        # check if folder exists and create it if it should be
+        doesFolderExist(path.dirname(outputName), args.parents)
 
     counter = 1
     numPlays = 0
